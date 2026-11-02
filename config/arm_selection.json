@@ -1,0 +1,125 @@
+[
+  {
+    "galaxy": "NGC0628",
+    "include": true,
+    "rmin": 0.2,
+    "rmax": 0.8,
+    "morphology": "clear spiral structure",
+    "reason": "Visible extended stellar arms.",
+    "mask_quality": "clear_stellar_pattern"
+  },
+  {
+    "galaxy": "NGC0925",
+    "include": true,
+    "rmin": 0.35,
+    "rmax": 0.8,
+    "morphology": "barred late spiral",
+    "reason": "Outer spiral structure; central bar excluded with inner radial cut.",
+    "mask_quality": "fragmented_stellar_pattern"
+  },
+  {
+    "galaxy": "NGC2403",
+    "include": true,
+    "rmin": 0.2,
+    "rmax": 0.8,
+    "morphology": "patchy spiral",
+    "reason": "Resolved patchy spiral stellar enhancements; low-mass sample label is not an irregular classification.",
+    "mask_quality": "fragmented_stellar_pattern"
+  },
+  {
+    "galaxy": "NGC2903",
+    "include": true,
+    "rmin": 0.35,
+    "rmax": 0.8,
+    "morphology": "barred outer spiral",
+    "reason": "Use the outer arms beyond the central bar; native beam is intrinsically659pc.",
+    "mask_quality": "tentative_outer_barred"
+  },
+  {
+    "galaxy": "NGC3184",
+    "include": true,
+    "rmin": 0.2,
+    "rmax": 0.8,
+    "morphology": "clear spiral structure",
+    "reason": "Visible multi-arm stellar pattern.",
+    "mask_quality": "clear_stellar_pattern"
+  },
+  {
+    "galaxy": "NGC3351",
+    "include": true,
+    "rmin": 0.45,
+    "rmax": 0.8,
+    "morphology": "weak outer spiral beyond bar/rings",
+    "reason": "Restrict to outer structure beyond bar and inner rings; morphology/template result is less secure than grand-design cases.",
+    "mask_quality": "tentative_outer_barred"
+  },
+  {
+    "galaxy": "NGC5194",
+    "include": true,
+    "rmin": 0.2,
+    "rmax": 0.8,
+    "morphology": "clear spiral structure",
+    "reason": "Visible grand-design arms.",
+    "mask_quality": "clear_stellar_pattern"
+  },
+  {
+    "galaxy": "NGC6946",
+    "include": true,
+    "rmin": 0.2,
+    "rmax": 0.8,
+    "morphology": "clear spiral structure",
+    "reason": "Visible multi-arm stellar pattern.",
+    "mask_quality": "clear_stellar_pattern"
+  },
+  {
+    "galaxy": "NGC7793",
+    "include": true,
+    "rmin": 0.2,
+    "rmax": 0.8,
+    "morphology": "flocculent spiral",
+    "reason": "Fragmented stellar spiral features; enhancement masks are less geometric than in grand-design spirals.",
+    "mask_quality": "fragmented_stellar_pattern"
+  },
+  {
+    "galaxy": "NGC2976",
+    "include": false,
+    "morphology": "no separable arms",
+    "reason": "Smooth/distorted two-lobed stellar structure, without a defensible spiral-arm/interarm division in the supplied images."
+  },
+  {
+    "galaxy": "NGC4736",
+    "include": false,
+    "morphology": "ring/oval dominated",
+    "reason": "Available inner-disc stellar pattern is dominated by ring/oval structure; no arm mask reliably separable from those components in the examined range."
+  },
+  {
+    "galaxy": "DDO154",
+    "include": false,
+    "morphology": "irregular",
+    "reason": "Irregular system; no coherent spiral-arm/interarm definition."
+  },
+  {
+    "galaxy": "DDO53",
+    "include": false,
+    "morphology": "irregular",
+    "reason": "Irregular system; no coherent spiral-arm/interarm definition."
+  },
+  {
+    "galaxy": "HO_II",
+    "include": false,
+    "morphology": "irregular",
+    "reason": "Irregular system; no coherent spiral-arm/interarm definition."
+  },
+  {
+    "galaxy": "IC2574",
+    "include": false,
+    "morphology": "irregular",
+    "reason": "Irregular system; no coherent spiral-arm/interarm definition."
+  },
+  {
+    "galaxy": "NGC4214",
+    "include": false,
+    "morphology": "irregular",
+    "reason": "Irregular system; no coherent spiral-arm/interarm definition."
+  }
+]

@@ -1,0 +1,51 @@
+\section[Quelle composante de l'\HI\ est la plus étroitement liée à la formation stellaire ?]{Quelle composante de l'\HI\ est la plus étroitement liée à la formation stellaire ?}
+\label{sec:ks_fitting}
+\label{sec:sflaw}
+
+Dans cette section, nous cherchons à déterminer laquelle des composantes d'\HI\ cinématiquement froide et chaude est la plus étroitement liée à la formation stellaire. Nous ajustons la relation de Kennicutt--Schmidt pour chaque composante gazeuse et comparons les pentes et les coefficients de corrélation, en prenant l'\HI\ total et le H$_2$ tracé par le CO comme références. Nous examinons les différences entre galaxies individuelles, ainsi qu'entre galaxies naines et spirales. La méthode d'ajustement est présentée dans la section~\ref{sec:ks_fitting_method}, puis les relations gaz--SFR dans la section~\ref{sec:ks_individual_results}.
+
+\subsection[Méthode d'ajustement]{Méthode d'ajustement}
+\label{sec:ks_fitting_method}
+
+Suivant \citet{Fbigiel2008}, nous comparons les pentes des relations de Kennicutt--Schmidt des différentes composantes gazeuses. En coordonnées logarithmiques, la relation de l'équation~\ref{eq:SFLaw} s'écrit :
+\begin{equation}
+\label{eq:ks_log_relation}
+\log_{10}\Sigma_{\mathrm{SFR}} = a + N\log_{10}\Sigma_{\mathrm{gas}},
+\end{equation}
+\noindent où $a=\log_{10}A$ est l'ordonnée à l'origine et $N$ l'exposant de la loi de puissance.
+
+\citet{Fbigiel2008} ont utilisé la bissectrice des deux régressions par moindres carrés ordinaires (OLS). Une régression OLS minimise les résidus verticaux ou horizontaux, selon la variable choisie comme variable dépendante. La méthode de la bissectrice combine ces deux régressions et traite les axes de façon symétrique. Or plusieurs distributions du gaz atomique de notre échantillon sont très dispersées ou presque verticales. Nous adoptons donc une régression orthogonale, qui minimise les distances perpendiculaires à la droite ajustée et estime directement l'orientation de la distribution.
+
+Les pixels voisins à l'intérieur d'un faisceau contenant des mesures corrélées de la même émission, nous échantillonnons les cartes à des positions espacées d'au moins une largeur de faisceau, horizontalement et verticalement. Au préalable, les cartes de gaz et de SFR sont ramenées à la même résolution spatiale et à la même grille de pixels. À chaque position retenue, nous relevons les valeurs du gaz et du SFR dans le pixel correspondant. Nous ajustons la relation de Kennicutt--Schmidt à ces mesures, représentées par les points bleus de la figure~\ref{fig:individual_galaxies}. La distribution grisée montre l'ensemble des valeurs positives des pixels du champ cartographié.
+
+Chaque mesure ainsi échantillonnée possède les coordonnées $(x_i,y_i)$, avec $x_i=\log_{10}\Sigma_{\mathrm{gas},i}$ et $y_i=\log_{10}\Sigma_{\mathrm{SFR},i}$, pour $i=1,\ldots,n$. Le nombre de mesures est noté $n$. Nous utilisons le critère de régression orthogonale \citep{Pearson1901,Isobe1990}, avec les poids définis ci-dessous. La droite ajustée minimise la somme pondérée des carrés des distances perpendiculaires :
+\begin{equation}
+\label{eq:ks_weighted_distance}
+\mathcal{Q}(a,N)
+=\sum_{i=1}^{n} w_i\,d_{\perp,i}^{\,2}
+=\sum_{i=1}^{n} w_i\,\frac{(y_i-a-Nx_i)^2}{1+N^2},
+\end{equation}
+\noindent où $N$ est la pente de la relation de Kennicutt--Schmidt dans l'équation~\ref{eq:ks_log_relation}, $a$ l'ordonnée à l'origine et $w_i$ le poids attribué à la mesure $i$. La quantité $d_{\perp,i}$ est la plus courte distance entre le point $(x_i,y_i)$ et la droite $y=a+Nx$ dans le diagramme de $\log_{10}\Sigma_{\mathrm{SFR}}$ en fonction de $\log_{10}\Sigma_{\mathrm{gas}}$.
+
+Afin de limiter l'influence des points dispersés dans les régions peu échantillonnées du diagramme gaz--SFR, nous attribuons davantage de poids aux points entourés de nombreuses mesures et moins aux points dont le voisinage en contient peu. La densité locale des points est estimée à l'aide d'un noyau gaussien bidimensionnel \citep{Scott1992}. La position de chaque point bleu $i$ dans le diagramme logarithmique est définie par :
+\begin{equation}
+\mathbf{z}_i =
+\begin{pmatrix}
+x_i \\
+y_i
+\end{pmatrix}.
+\end{equation}
+Son poids est proportionnel à la densité des autres points bleus dans son voisinage :
+\begin{equation}
+\label{eq:ks_density_weight}
+w_i = \sum_{\substack{j=1\\j\ne i}}^{n}
+\exp\!\left[-\frac{1}{2}
+(\mathbf{z}_i-\mathbf{z}_j)^{\mathrm{T}}
+\mathbf{H}^{-1}
+(\mathbf{z}_i-\mathbf{z}_j)\right],
+\end{equation}
+\noindent où la somme porte sur tous les autres points bleus. La matrice $\mathbf{H}$ fixe l'étendue et la forme du voisinage gaussien. La règle de Scott \citep{Scott1992} donne $\mathbf{H}=n^{-1/3}\mathbf{S}$, où $n$ est le nombre de points et $\mathbf{S}$ la matrice de covariance de leurs coordonnées logarithmiques. Les points proches contribuent fortement à la somme, les points éloignés très peu. Un point entouré de nombreux voisins reçoit donc un poids plus élevé. Ces poids décrivent la concentration des mesures dans le diagramme ; ils ne représentent pas leurs incertitudes.
+
+Le coefficient de corrélation de Pearson $r$ permet de quantifier l'intensité et le signe de la corrélation dans chaque relation de Kennicutt--Schmidt.
+
+Les incertitudes sur les paramètres ajustés sont estimées à partir de 2000 échantillons bootstrap, obtenus en tirant avec remise les paires de mesures de gaz et de SFR. La relation est ajustée à chaque nouvel échantillon. Les 16e et 84e centiles des valeurs ajustées définissent les bornes de l'intervalle d'incertitude à 68\%. Ces intervalles décrivent l'incertitude d'échantillonnage, sans inclure les incertitudes systématiques sur la conversion CO--H$_2$ et la calibration du SFR. Lorsque la relation est presque verticale et que la pente est mal contrainte, nous indiquons l'angle $\theta$ de la droite par rapport à l'horizontale. Les droites en tirets de la figure~\ref{fig:individual_galaxies} représentent les ajustements. Le tableau~\ref{tab:individual_ks_summary} donne les paramètres et leurs incertitudes.

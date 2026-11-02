@@ -1,0 +1,16 @@
+VALIDATION — 2 NOVEMBER 2026
+
+Both English and French manuscripts compiled successfully using Snakemake.
+Each PDF contains 69 pages; whitespace-normalised extracted text matches the
+reference manuscript exactly. All 40 included publication assets match their
+recorded SHA-256 checksums. No empty pages were found.
+
+The default workflow also passed in a fresh copy containing only files selected
+for Git publication, without the original workspace, raw data or frozen caches.
+A second build and dry run both reported that nothing remained to be done.
+
+The local input inventory checks 54 supplied survey inputs (6,111,235,635 bytes)
+and 385 cached products (1,045,139,919 bytes). These are linked, not duplicated.
+The retained scientific modules passed import and undefined-name checks.
+ROHSA and scientific calculations were not rerun; numerical equivalence after
+regenerating the scientific products has not been tested.

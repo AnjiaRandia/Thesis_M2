@@ -1,0 +1,287 @@
+\chapter[Methodology and data]{Methodology and data}
+
+This chapter describes the observational data, the methods used to separate and map the \HI\ components, and the galaxy sample.
+
+\section{Neutral atomic hydrogen}
+
+All \textrm{H\textsc{i}} data used in this study were obtained from \textit{The \textrm{H\textsc{i}} Nearby Galaxy Survey} (THINGS; \citealt{things}), which used the Karl G. Jansky Very Large Array (VLA) telescope of the National Radio Astronomy Observatory (NRAO)\footnote{The National Radio Astronomy Observatory is a facility of the National Science Foundation operated under cooperative agreement by Associated Universities, Inc.}.\\\indent
+The VLA is located on the Plains of San Agustin in New Mexico and consists of 27 antennas, each with a diameter of 25 metres, arranged in a Y-shaped configuration with a maximum baseline of 35 km. The array covers frequencies ranging from 50 MHz to 97 GHz, achieving angular resolutions as fine as 0.1 arcseconds and sensitivities of approximately 100 microjanskys \citep{vla1980}.\\\indent
+THINGS surveyed the 21 cm emission line in 34 galaxies in the local neighbourhood of the Milky Way, with the goal of investigating the fundamental nature and characteristics of the ISM in relation to galaxy morphology, star formation, and mass distribution across the Hubble sequence. All 34 galaxies are situated at distances between 2 and 15 Mpc. THINGS mapped \HI\ emission in 34 nearby galaxies, with the goal of investigating the properties of the ISM in relation to galaxy morphology, star formation, and mass distribution. All 34 galaxies are located at distances between 2 and 15 Mpc. The survey provides two sets of data cubes with different weighting schemes: robust weighting, optimized for spatial resolution ($\sim 6''$), and natural weighting, optimized for sensitivity to diffuse emission ($\sim 11''$). The velocity resolution is $1.3$ km s$^{-1}$ for two galaxies and either $2.6$ or $5.2$ km s$^{-1}$ for the rest \citep{Walter2008}. The sample spans a wide range of properties: SFR from $10^{-3}$ to 6 $M_\odot$ yr$^{-1}$, total \textrm{H\textsc{i}} mass from 0.01 to $14 \times 10^9\,M_\odot$, absolute B-band magnitude from $-11.5$ to $-21.7$ mag, and metallicities from 7.5 to 9.2 in units of $12 + \log[\mathrm{O/H}]$. The THINGS data products include spectral cubes, integrated \textrm{H\textsc{i}} intensity maps (moment 0), velocity maps (moment 1), and velocity dispersion maps (moment 2), all publicly available online\footnote{http://www.mpia.de/THINGS}.\\\indent
+The \textrm{H\textsc{i}} surface density $\Sigma_{\textrm{H\textsc{i}}}$ was derived from the moment 0 maps using the relation from \citet{Leroy2008}:
+
+\begin{equation}
+	\Sigma_{\textrm{H\textsc{i}}} = 0.020 \times I_{21\mathrm{cm}} \times \cos i 
+	\label{eq:mom0_HI}
+\end{equation}
+
+\noindent where $\Sigma_{\textrm{H\textsc{i}}}$ is in $M_\odot$ pc$^{-2}$, $I_{21\mathrm{cm}}$ is the integrated intensity in K km s$^{-1}$, and $i$ is the inclination angle of the galaxy. The factor $\cos i$ corrects for the projection of the disc onto the plane of the sky. The left column of Figure \ref{fig:surf_dens_exemples} shows a few example $\Sigma_{\textrm{H\textsc{i}}}$ maps from the galaxies in this study.
+
+
+\section{Star formation rate}
+
+The SFR surface density maps were constructed using a combination of mid-infrared (24 $\mu$m) and far-ultraviolet (FUV) data. The 24 $\mu$m observations were obtained from the \textit{Spitzer Infrared Nearby Galaxies Survey} (SINGS; \citealt{sings2003}) using the \textit{Spitzer Space Telescope}, while the FUV data came from the \textit{Galaxy Evolution Explorer Nearby Galaxies Survey} (GALEX NGS; \citealt{galex2007}). The SINGS data have an angular resolution of 6 arcseconds, and the GALEX NGS data have a resolution of 4.0 arcseconds.\\\indent
+The 24 $\mu$m emission primarily originates from dust grains heated by ultraviolet radiation produced by young, massive stars (predominantly O and B types) in star-forming regions. These hot stars emit copious UV photons, which are absorbed by surrounding dust grains, heating them. The dust then re-emits this absorbed energy in the infrared \citep{calzetti2007}.\\\indent
+FUV emission, by contrast, traces unobscured star formation, as the light comes directly from the photospheres of young massive stars. Since these stars dominate the FUV luminosity, the FUV flux serves as a sensitive indicator of recent star formation, typically averaged over the past $\sim$100 Myr \citep{salim2007}.\\\indent
+Combining these two tracers provides a more complete census of star formation: the FUV captures unobscured star formation while the 24 $\mu$m emission accounts for dust-obscured activity. The SFR surface density $\Sigma_{\mathrm{SFR}}$ was calculated using the calibration from \citet{Leroy2008}, which was derived from the 24 $\mu$m and FUV-to-SFR calibrations of \citet{calzetti2007} and \citet{salim2007}:
+
+\begin{equation}
+	\Sigma_{\mathrm{SFR}} = (8.1 \times 10^{-2}\,I_{\mathrm{FUV}} + 3.2^{+1.2}_{-0.7} \times 10^{-3}\,I_{24\mu\mathrm{m}})\,\cos i
+	\label{eq:sfr_24_uv}
+\end{equation}
+
+\noindent where $\Sigma_{\mathrm{SFR}}$ is in $M_\odot$ yr$^{-1}$ kpc$^{-2}$, $I_{\mathrm{FUV}}$ and $I_{24\mu\mathrm{m}}$ are the FUV and 24 $\mu$m intensities in MJy sr$^{-1}$, and $i$ is the galaxy inclination angle. A sample of $\Sigma_{\mathrm{SFR}}$ maps is shown in the right column of Figure \ref{fig:surf_dens_exemples}.
+\begin{figure}[htbp]
+	\centering
+	\begin{minipage}{.9\linewidth}
+		\centering
+		\includegraphics[width=1\linewidth]{images/628_surfaces.pdf}
+		\subcaption{NGC 0628}
+		\includegraphics[width=1\linewidth]{images/3351_surfaces.pdf}
+		\subcaption{NGC 3351}
+		\includegraphics[width=1\linewidth]{images/4214_surfaces.pdf}
+		\subcaption{NGC 4214}
+	\end{minipage}
+	\caption{Example maps of the surface densities of HI (left column), H$_2$ (middle column) and SFR (right column) from the galaxies in this study. The red dashed annuli display the optical radius $r_{25}$. The cross indicates the centre of each galaxy.}
+	\label{fig:surf_dens_exemples}
+\end{figure}
+\section{Molecular hydrogen}
+
+We use carbon monoxide (CO) maps from the \textit{Heterodyne Receiver Array CO Line Extragalactic Survey} (HERACLES; \citealt{leroy2009}) to trace molecular hydrogen (H$_2$), except for NGC 5236. HERACLES used the 30-metre telescope of the \textit{Institut de Radioastronomie Millimétrique} (IRAM)\footnote{https://iram-institute.org/observatories/30-meter-telescope/}, located on Pico Veleta in the Spanish Sierra Nevada. The survey mapped the CO J$=$2--1 emission line at 230 GHz in 48 nearby galaxies. The HERACLES maps have excellent spatial coverage, extending to the optical radius $r_{25}$ for each target, with an angular resolution of 13 arcseconds and a velocity resolution of 2.6 km s$^{-1}$. The data products include CO datacubes, integrated CO intensity maps (moment 0), and intensity-weighted velocity maps (moment 1), which are publicly available online\footnote{https://oms.iram.fr/oms/?dms=viewobject/\_=-O-260678\&pageId=4}.\\\indent
+For NGC 5236, the CO data were obtained from the \textit{Nobeyama CO Atlas of Nearby Spiral Galaxies} \citealt{nobeyama2007}. The survey was conducted using the 45-m telescope of the \textit{Nobeyama Radio Observatory} (NRO) in Japan, equipped with the 25-Beam Array Receiver System (BEARS), which enables large-scale mapping of molecular gas in external galaxies. The data were acquired with a beam size of 15 arcseconds and a typical velocity resolution of 5 km s$^{-1}$. The resulting data products provide maps of CO J$=$1--0 of 40 spiral galaxies.\\\indent
+The H$_2$ surface density $\Sigma_{\mathrm{H}_2}$ was derived from the integrated CO intensity $I_{\mathrm{CO}}$ using the relation from \citet{Leroy2008} for the J$=$2--1 transition:
+
+\begin{equation}
+	\Sigma_{\mathrm{H}_2} = 5.5 \times I_{\mathrm{CO}} \times \cos i 
+	\label{eq:co_h2}
+\end{equation}
+or for the J$=$1--0 transition:
+\begin{equation}
+	\Sigma_{\mathrm{H}_2} = 4.4 \times I_{\mathrm{CO}} \times \cos i 
+	\label{eq:co10_h2}
+\end{equation}
+
+\noindent where $\Sigma_{\mathrm{H}_2}$ is in $M_\odot$ pc$^{-2}$, $I_{\mathrm{CO}}$ is in K km s$^{-1}$, and $i$ is the inclination angle. These relations assume a constant CO-to-H$_2$ conversion factor $X_{\mathrm{CO}} = 2 \times 10^{20}$ cm$^{-2}$ (K km s$^{-1}$)$^{-1}$, which is the $X_{\mathrm{CO}}$ value for solar neighborhood metallicity. Equation \ref{eq:co_h2} also includes corrections for the J$=$2--1 to J$=$1--0 line ratio. The middle column of Figure \ref{fig:surf_dens_exemples} displays the $\Sigma_{\mathrm{H}_2}$ maps.
+
+
+
+\section[Extraction of kinematically cold and warm \textrm{H\textsc{i}} components]{Extraction of kinematically cold and warm \textrm{H\textsc{i}}\\components}
+\label{sec:ROHSA}
+
+\subsection{Overview of Gaussian decomposition approaches}
+
+As discussed in Section \ref{subsubsec:gaussian_decomposition}, several methods exist for decomposing \textrm{H\textsc{i}} emission spectra into multiple Gaussian components that can be associated with kinematically distinct gas populations. These methods differ primarily in how they handle the inherent degeneracies in multi-Gaussian fitting and how they incorporate spatial information.\\\indent
+Pixel-by-pixel decomposition methods, such as BAYGAUD \citep{Oh2019}, fit Gaussian models to each line-of-sight velocity profile independently. BAYGAUD uses Bayesian Markov Chain Monte Carlo techniques with nested sampling to estimate model parameters and uses Bayes factor statistics to determine the optimal number of Gaussian components. While this approach provides robust parameter estimation and uncertainty quantification, it treats each spatial pixel independently, potentially missing coherent structures that extend across multiple pixels. Another pixel-by-pixel approach, GaussPy \citep{Lindner2015}, uses an autonomous Gaussian decomposition (AGD) algorithm based on derivative spectroscopy to determine the number of components and their initial parameters, and has been applied specifically to separate narrow, CNM-like components from broad, WNM-like components in \textrm{H\textsc{i}} emission and absorption spectra \citep{Murray2017, Murray2018}. Its successor, GaussPy+ \citep{Riener2019}, improves the noise handling and fitting routine of the original algorithm and introduces an optional spatial refitting step, in which flagged or poorly constrained solutions are refit using the results from neighbouring pixels. This has also been used for cold atomic gas extraction from \textrm{H\textsc{i}} emission \citep{Syed2023}. Unlike BAYGAUD, GaussPy+ can therefore incorporate a limited degree of spatial coherence, though this is applied as a post-processing correction rather than as an intrinsic constraint of the fit itself. \\\indent
+An alternative approach, the super-profile method of \citet{Ianjamasimanana2012}, addresses the signal-to-noise limitations of pixel-by-pixel-based approaches by stacking velocity profiles across entire galaxies or large regions. While effective for deriving global properties, this method sacrifices spatial information and cannot provide maps of individual phase components.\\\indent
+For this study, we use the spatially coherent Gaussian decomposition methodology implemented in ROHSA (Regularised Optimisation for Hyper-Spectral Analysis; \citealt{Marchal2019}) to separate the \textrm{H\textsc{i}} emission in our galaxies into narrow and broad \textrm{H\textsc{i}} components. ROHSA incorporates spatial coherence as a constraint in the decomposition, producing maps of kinematically distinct components that are physically connected across neighbouring pixels. 
+\subsection{The ROHSA algorithm}
+\label{subsec:rohsa_algorithm}
+
+ROHSA was developed specifically to address the challenge of extracting the multiphase structure of the neutral ISM from 21 cm emission data cubes \citep{Marchal2019}. The algorithm decomposes hyper-spectral data into a sum of spatially coherent Gaussian components, taking advantage of the physical expectation that individual gas structures should vary smoothly across adjacent lines of sight.\\\indent
+ROHSA models the observed brightness temperature spectrum $T_B(x, y, v)$ at each spatial position $(x, y)$ and velocity $v$ as a sum of $N$ Gaussian functions:
+
+\begin{equation}
+	T_B(x, y, v) = \sum_{n=1}^{N} A_n(x, y) \exp\left(-\frac{(v - \mu_n(x, y))^2}{2\sigma_n(x, y)^2}\right)
+	\label{eq:gaussian_model}
+\end{equation}
+
+\noindent where for each Gaussian component $n$, $A_n(x, y)$ is the amplitude, $\mu_n(x, y)$ is the centroid velocity, and $\sigma_n(x, y)$ is the velocity dispersion. Unlike pixel-by-pixel methods, ROHSA constrains these parameters to vary smoothly across the spatial dimensions.\\\indent
+The algorithm minimises a regularised cost function that combines a data fidelity term with spatial regularisation terms:
+
+\begin{equation}
+	\mathcal{J}(\theta) = \sum_{x,y,v} \frac{(T_B^{\mathrm{obs}}(x,y,v) - T_B^{\mathrm{model}}(x,y,v))^2}{\sigma_{\mathrm{noise}}(x,y)^2} + \mathcal{R}(\theta)
+	\label{eq:cost_function}
+\end{equation}
+
+\noindent where $\theta$ represents the full set of Gaussian parameters, and $\mathcal{R}(\theta)$ is the regularisation term that enforces spatial smoothness. The regularisation term takes the form:
+
+\begin{equation}
+	\mathcal{R}(\theta) = \lambda_A \sum_n \|\nabla A_n\|^2 + \lambda_\mu \sum_n \|\nabla \mu_n\|^2 + \lambda_\sigma \sum_n \|\nabla \sigma_n\|^2 + \lambda_\sigma'' \sum_n (\sigma_n - \bar{\sigma}_n)^2
+	\label{eq:regularisation}
+\end{equation}
+
+\noindent The first three terms penalise spatial gradients in the amplitude, centroid velocity, and velocity dispersion fields, respectively, encouraging smooth variations across the map. The hyperparameters $\lambda_A$, $\lambda_\mu$, and $\lambda_\sigma$ control the strength of this spatial smoothing. The fourth term, controlled by $\lambda_\sigma''$, encourages the velocity dispersions of each Gaussian component to cluster around characteristic values $\bar{\sigma}_n$, promoting the identification of distinct kinematic phases.\\\indent
+ROHSA implements a multi-resolution optimisation strategy. Rather than attempting to fit the full-resolution data cube directly, the algorithm proceeds through a hierarchical series of spatial scales, from coarse to fine resolution:
+
+\begin{enumerate}
+	\item The data cube is spatially averaged to a coarse grid.
+	\item Gaussian parameters are estimated on this smoothed version.
+	\item The solution is interpolated to a finer grid.
+	\item Parameters are refined at the new resolution.
+	\item Steps 3--4 are repeated until the original resolution is reached.
+\end{enumerate}
+
+\noindent This multi-resolution approach improves convergence by first capturing large-scale structures before refining small-scale details. The optimisation at each resolution level is performed using the L-BFGS-B algorithm \citep{Byrd1995}, a limited-memory quasi-Newton method suitable for large-scale bound-constrained optimisation.
+
+\subsection{Advantages of ROHSA for phase separation}
+
+ROHSA offers several advantages over alternative decomposition methods for the purpose of separating kinematically cold and warm \textrm{H\textsc{i}} components:
+
+\begin{enumerate}
+	\item \textbf{Spatial coherence}: By incorporating regularisation, ROHSA produces Gaussian components that are spatially coherent, reflecting the physical expectation that individual gas structures extend across multiple resolution elements. This is particularly important for identifying extended cold \textrm{H\textsc{i}} structures that may be associated with molecular cloud formation regions.
+	
+	\item \textbf{Phase separation capability}: The $\lambda_\sigma''$ regularisation term explicitly encourages the identification of components with distinct characteristic velocity dispersions, facilitating the separation of kinematically narrow (cold) and broad (warm) components without requiring prior assumptions about the number of phases.
+	
+	\item \textbf{Noise suppression}: The spatial regularisation naturally suppresses noise-driven fluctuations in the fitted parameters, improving the reliability of the decomposition in regions of lower signal-to-noise ratio.
+	
+	\item \textbf{Scalability}: The multi-resolution approach and efficient optimisation algorithm allow ROHSA to process large data cubes in reasonable computation times.
+\end{enumerate}
+
+\noindent \citet{Marchal2019} tested ROHSA on synthetic 21 cm observations computed from numerical simulations of thermally bistable turbulence, demonstrating that the algorithm successfully recovers the multiphase nature of the \textrm{H\textsc{i}} and that the power spectra of column density and centroid velocity for each phase are well reproduced. Application to real observations of a high Galactic latitude field from the GHIGLS survey produced a picture of multiphase \textrm{H\textsc{i}} with isolated, filamentary narrow structures ($\sigma \sim 1$--2 km s$^{-1}$) and broader, diffuse components ($\sigma \sim 4$--10 km s$^{-1}$).
+
+\subsection{Implementation and parameter selection}
+
+ROHSA is implemented in Fortran 90 and is publicly available\footnote{https://github.com/antoinemarchal/ROHSA}. A Python interface (ROHSApy) facilitates running the code and analysing the output. The algorithm requires several user-specified inputs:
+
+\begin{itemize}
+	\item The number of Gaussian components $N$: This should be chosen high enough to adequately encode the spectral complexity but not so high as to overfit the data.
+	\item The hyperparameters ($\lambda_A$, $\lambda_\mu$, $\lambda_\sigma$, $\lambda_\sigma''$): These control the degree of spatial smoothing and phase clustering. Higher values produce smoother maps but may suppress real small-scale structure; values that are too low may result in noise-dominated solutions.
+	\item A 2D noise map: required for proper weighting in the cost function.
+\end{itemize}
+
+\noindent These parameters must be determined empirically for each galaxy, as optimal values depend on the data quality, spatial resolution, and complexity of the velocity field. For this study, parameters were tuned through an iterative process, examining the residuals and the physical plausibility of the resulting decomposition.\\\indent
+As an example, Figure \ref{fig:cnm_wnm_maps} shows the total, kinematically cold, and kinematically warm \HI\ surface density maps for IC 2574. The final fits use $\lambda_A=0$, $\lambda_\mu=1$, $\lambda_\sigma=1$ and $\lambda_\sigma''=0$, with two or three Gaussian components per galaxy. Removing the global width penalty allows the fitted dispersions to change across the disc, including with radius. Figure~\ref{fig:cnm_wnm_maps} uses the final fit with two Gaussians for IC 2574. The adopted parameters are presented in Appendix~\ref{app:rohsa}. 
+\begin{figure}[htbp]
+	\centering
+	\begin{minipage}{1\linewidth}
+		\centering
+		\includegraphics[width=1\linewidth]{images/IC2574-cnm_wnm.pdf}
+	\end{minipage}
+	
+	\caption{Total (left), kinematically cold (middle), and kinematically warm (right) \HI\ surface density maps of IC 2574 from the ROHSA decomposition. The total map is the sum of the cold and warm components. All panels use the same colour scale and mask. The shared colourbar shows the surface density in $M_\odot$ pc$^{-2}$.}
+	\label{fig:cnm_wnm_maps}
+\end{figure}
+
+\subsection{Classification of kinematically cold and warm components}
+
+Following the Gaussian decomposition, individual components were classified as kinematically cold or warm based on their velocity dispersions. Guided by the observational and theoretical literature \citep{Heiles2003a, Ianjamasimanana2012, Park2025}, the threshold is measured locally from the fitted widths. At each position, we calculate flux-weighted mean widths for the narrowest and widest Gaussians within a three-beam neighbourhood and take their geometric mean as the dividing width. The cut is bounded below by the resolvable dispersion, $1.274\Delta v$, where $\Delta v$ is the channel spacing. Components below this local cut are assigned to the narrow map and the others to the broad map. The width distributions do not show a clear separation into two modes, so this cut defines a kinematic partition rather than detecting two thermal phases.\\\indent
+Observed linewidths include thermal and nonthermal broadening. The terms kinematically cold and kinematically warm describe the narrower and broader components, rather than directly identifying them with the thermal CNM and WNM. The narrow-component fraction, $f_n$, is the fraction of integrated \HI\ flux assigned to the narrow component. This fraction also depends on the assumed number of Gaussian components. BAYGAUD provides a comparison because it selects the component number separately for each sight line.
+
+\subsection{Requirements and limitations}
+
+The ROHSA algorithm operates under the assumption that the data are optically thin, meaning that most radiation passes through the gas without significant absorption or scattering. This assumption is generally valid for face-on or moderately inclined galaxies, but becomes problematic for edge-on systems where line-of-sight path lengths through the disc are long. Consequently, the sample was restricted to galaxies with inclinations $i < 70^\circ$.\\\indent
+Computation time depends on several factors, primarily the number of Gaussian components $N$, the spatial dimensions of the data cube (in pixels), and the number of velocity channels.
+
+
+\section{Source finding and masking with SoFiA}
+\label{sec:sofia}
+
+The Source Finding Application (SoFiA; \citealt{serra2015})\footnote{https://gitlab.com/SoFiA-Admin/SoFiA-2/} was used to generate and mask the \textrm{H\textsc{i}} moment 0 maps from the \textrm{H\textsc{i}}, narrow \HI\ and broad \HI\ data cubes outputted by ROHSA (see Section \ref{sec:ROHSA}). SoFiA is an open-source program designed for automated detection and characterisation of \textrm{H\textsc{i}} sources in extragalactic spectral line data cubes.\\\indent
+SoFiA uses the position of the emission on the sky and its distribution across velocity channels to identify sources. It provides several detection methods, including methods that search for emission over different spatial and velocity scales. This helps detect both compact sources and faint, extended emission. The detections are recorded in a binary mask, which assigns a value of one to detected voxels, the pixels of a three-dimensional cube, and zero elsewhere. The mask therefore defines where the detected emission lies on the sky and across velocity channels.\\\indent
+An appropriate detection threshold needs to be chosen to distinguish emission from noise, taking into account the sensitivity of the observations and the emission being studied. SoFiA groups neighbouring detected voxels into individual sources. Minimum size requirements can help remove isolated noise peaks. After sources have been identified, an optional reliability parameter can be set to retain only those with a sufficiently high estimated probability of being real.\\\indent
+SoFiA produces integrated intensity maps (moment 0), intensity-weighted velocity maps (moment 1), velocity dispersion maps (moment 2), integrated spectra, position--velocity diagrams, and data cubes for each detected source.
+
+
+
+
+
+
+
+
+\section{Galaxy sample}
+\label{sec:galaxy_sample}
+
+For this study, the classification scheme of \citet{Leroy2008} was adopted to distinguish between dwarf and spiral galaxies: dwarf galaxies are defined as having stellar masses $\log(M_*/M_\odot) \lesssim 10.0$ and absolute B-band magnitudes $M_B \gtrsim -20$ mag. Galaxies not meeting these criteria are classified as spirals.\\\indent
+The final sample consists of 16 galaxies: nine dwarfs and seven spirals. These were selected from the intersection of THINGS, GALEX NGS and SINGS, ensuring the availability of all required data products. All the low-mass galaxies except NGC 0925, NGC 2403, NGC 2976 and NGC 4214 have no CO data, so they are assumed to be \HI\ dominated.\\\indent
+Four galaxies from the initial sample were excluded. For Ho I, M81 dwA, and NGC 5055, none of the tested ROHSA parameter settings met the adopted acceptance criteria. NGC 5236 was excluded because strong negative features in its \HI\ cube affected the existing decomposition results.\\\indent
+All selected galaxies have inclinations $i < 70^\circ$. This criterion was imposed for several reasons: (1) highly inclined galaxies yield fewer independent data points after deprojection, complicating interpretation; (2) beam elongation along the minor axis introduces systematic uncertainties; and (3) the optically thin assumption required by ROHSA becomes increasingly violated at high inclinations.\\\indent
+The final \HI\ decompositions use each galaxy's native spatial resolution. For each galaxy, the gas and SFR maps were matched to a common spatial resolution before comparison. Comparisons between galaxies also require smoothing the maps to a common physical resolution so that the same spatial scale is studied in each galaxy. Table \ref{tab:galaxy_sample} lists the sample galaxies and their properties.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{table}[htbp]
+	\centering
+	\caption{\textbf{Properties of the final galaxy sample.} $D$ is the distance, $i$ the inclination, $r_{25}$ the optical radius, PA the position angle, $M_*$ the stellar mass, $M_B$ the absolute B-band magnitude, SFR the star formation rate, metallicity is given as $12+\log(\mathrm{O/H})$, $\ell_{\HI}$ is the native linear resolution of the \HI\ data, and $\ell_{\mathrm{dec}}$ is the resolution used for decomposition.}
+	\begin{adjustbox}{width=1\textwidth}
+		\begin{tabular}{|ccccccccccccc|}
+			\hline\hline
+			Galaxy & $D$ & $i$ & $r_{25}$ & PA & Hubble &Morph.& $\log M_*$ & $M_B$ & SFR &metal. & $\ell_{\HI}$ & $\ell_{\mathrm{dec}}$ \\[-1pt]
+			& [Mpc] & [$^\circ$] & [kpc] & [$^\circ$] & Type &Type& [$M_\odot$] & [mag]&[$M_{\odot}\ yr^{-1}$] &12+log(O/H) & [pc] & [pc] \\
+			1 	&	2	&	3	&	4	&	5	&	6	&	7	&	8	&	9	&	10	&	11 & 12 & 13 \\
+			\hline
+			\multicolumn{13}{|c|}{\rule[-5pt]{0pt}{20pt}Dwarf galaxies} \\
+			DDO 53 & 3.6 & 31 & 0.4 & 132 & Irr &9.9& 7.0$^b$ & $-13.4$ &0.008$^c$& 7.77 & 205 & 205 \\
+			DDO 154 & 4.3 & 66 & 1.2 & 230 & Irr &9.9& 7.1 & $-14.4$ &0.005& 7.54 & 294 & 294 \\
+			HO II & 3.4 & 41 & 3.7 & 177 & Irr &9.9& 8.3 & $-16.9$ &0.048& 7.68 & 226 & 226 \\
+			IC 2574 & 4.0 & 53 & 7.5 & 56 & Irr &8.9& 8.7 & $-18.0$ &0.070& 7.94 & 248 & 248 \\
+			NGC 0925 & 9.2 & 66 & 14.2 & 287 & SBcd &7.0& 9.9 & $-20.0$ &0.561& 8.24 & 265 & 265 \\
+			NGC 2403 & 3.2 & 63 & 7.3 & 124 & SBc &6.0& 9.7 & $-19.4$ &0.382& 8.31 & 136 & 136 \\
+			NGC 2976 & 3.6 & 65 & 3.8 & 335 & Sc &5.2& 9.1 & $-17.8$ &0.087& 8.30 & 129 & 129 \\
+			NGC 4214 & 2.9 & 44 & 2.9 & 65 & Irr &9.8& 8.8 & $-17.4$ &0.107& 8.34 & 207 & 207 \\
+			NGC 7793 & 3.9 & 50 & 5.8 & 290 & Scd &7.4& 9.5 & $-18.7$ &0.235& 8.22 & 295 & 295 \\
+			\hline
+			\multicolumn{13}{|c|}{\rule[-5pt]{0pt}{20pt}Spiral galaxies} \\
+			NGC 0628 & 7.3 & 7 & 10.4 & 20 & Sc &5.2& 10.1 & $-20$ &0.807& 8.33 & 420 & 420 \\
+			NGC 2903 & 8.9 & 65 & 11.7 & 204 & Sbc &4.0& 10.6$^a$ & $-17.8$ &1.400& 9.12 & 659 & 659 \\
+			NGC 3184 & 11.1 & 16 & 11.9 & 179 & SBc &5.9& 10.3 & $-19.9$ &0.901& 8.48 & 287 & 287 \\
+			NGC 3351 & 10.1 & 41 & 10.6 & 192 & SBb &3.1& 10.4 & $-19.7$ &0.940& 8.60 & 487 & 487 \\
+			NGC 4736 & 4.7 & 41 & 5.3 & 296 & Sab &2.3& 10.3 & $-20.0$ &0.481& 8.31 & 233 & 233 \\
+			NGC 5194 & 8.0 & 20 & 9.0 & 172 & SBc &4.0& 10.6 & $-21.1$ &3.125& 8.54 & 462 & 462 \\
+			NGC 6946 & 5.9 & 33 & 9.8 & 243 & SBc &5.9& 10.5 & $-20.9$ &3.329& 8.40 & 173 & 173 \\
+			\hline\hline
+			
+			
+			
+		\end{tabular}
+		
+	\end{adjustbox}
+	\label{tab:galaxy_sample}
+	\subcaption*{\\\textbf{Notes.} Unless noted, columns 2 -- 6 and 8 -- 10 are from \citet{Leroy2008}. Column 11 is from \citet{2014PhDT}. Column 12 gives the physical size of the native \HI\ beam major axis, calculated from the original cube headers using the distances in column 2. Column 13 gives the physical resolution used for the \HI\ decomposition. Column 7 is from \citet{Hyperleda}. $^a$ -- from \citet{ngc2903mstar}, $^b$ -- from \citet{Sylos2025}, $^c$ -- from \citet{things}
+	}
+\end{table}
+
+\clearpage
+\section[Open science and reproducibility]{Open science and reproducibility}
+\label{sec:reproducibility}
+
+To make this thesis fully reproducible, we make all analysis scripts available on GitHub at \url{https://github.com/AnjiaRandia/Thesis_M2}. We use Snakemake to organise our processing scripts into a workflow that can be launched with a single command. Snakemake is a workflow management system that automates the execution of analysis steps in the order required by their inputs and outputs \citep{Molder2021}. Separate configuration files record the adopted analysis settings, while an environment file lists the software dependencies.
+
+Sharing the analysis scripts allows other researchers to reproduce our analysis and adapt it to their own data. This approach aligns with the FAIR principles, which aim to make research products Findable, Accessible, Interoperable and Reusable \citep{Wilkinson2016}.
+
+These principles also guide the open science approach promoted by the SKA Observatory (SKAO), which encourages the sharing of data, software and scientific workflows \citep{SKAOOpenScience}. Its network of SKA Regional Centres is being developed to provide access to data, computing resources and analysis tools, allowing researchers to collaborate and reproduce one another's analyses. The sharing of our analysis workflow follows the same aim of making our methods fully accessible to others.
+\newpage

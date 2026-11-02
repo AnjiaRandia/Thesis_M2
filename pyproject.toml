@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hiphases-thesis"
+version = "1.0.0"
+description = "Kinematically cold and warm atomic hydrogen in nearby galaxies"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+dependencies = ["snakemake>=9,<10"]
+
+[project.optional-dependencies]
+analysis = ["numpy", "scipy", "astropy", "pandas", "matplotlib", "reproject", "photutils", "radio-beam", "ROHSApy"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 110

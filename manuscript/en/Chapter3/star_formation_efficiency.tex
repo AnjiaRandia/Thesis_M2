@@ -1,0 +1,58 @@
+
+\begingroup
+\raggedbottom
+\setlength{\parskip}{6pt}
+\section[Star formation efficiency]{Star formation efficiency}
+\label{sec:sfe}
+
+The Kennicutt--Schmidt relations show how the gas and SFR surface densities vary together. Following \citet{Leroy2008}, we ask how the apparent star formation efficiency differs between the narrow and broad \HI\ reservoirs, and how it changes across the disc. We define the star formation efficiency (SFE) as the SFR divided by the gas mass.
+
+We calculate the SFE from the new narrow and broad maps, using the same matched spatial resolution within each galaxy as in the individual Kennicutt--Schmidt comparisons. For a region containing $N_{\mathrm{reg}}$ valid pixels, we use
+\begin{equation}
+\label{eq:regional_sfe}
+\mathrm{SFE}_p = 10^{-6}\,
+\frac{\displaystyle\sum_{i=1}^{N_{\mathrm{reg}}}\Sigma_{\mathrm{SFR},i} A_i}
+{\displaystyle\sum_{i=1}^{N_{\mathrm{reg}}}\Sigma_{p,i} A_i},
+\end{equation}
+where $A_i$ is the pixel area and $p$ denotes the gas tracer. The factor $10^{-6}$ converts the SFR surface density from per kpc$^2$ to per pc$^2$, giving SFE in yr$^{-1}$. To compare the tracers over the same area, we calculate their SFEs from the same pixel values in the gas and SFR maps.
+
+\begin{table}[tbp]
+\centering
+\caption{Median aperture $\log_{10}\mathrm{SFE}$, in yr$^{-1}$, calculated separately for each galaxy before combining the sample. Intervals are the central 68\% of 10\,000 whole-galaxy bootstrap resamples; calibration and decomposition uncertainties are not included. Atomic rows use nine dwarfs and seven spirals. Molecular rows use the same CO-covered pixels within four dwarfs and seven spirals.}
+\label{tab:sfe}
+\begingroup
+
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lrrr}
+\toprule
+Gas denominator & Dwarfs & Spirals & All galaxies \\
+\midrule
+Total \HI & $-9.69^{+0.21}_{-0.10}$ & $-9.16^{+0.17}_{-0.13}$ & $-9.39^{+0.14}_{-0.29}$ \\
+Narrow \HI & $-9.29^{+0.21}_{-0.15}$ & $-8.66^{+0.05}_{-0.33}$ & $-9.08^{+0.19}_{-0.28}$ \\
+Broad \HI & $-9.47^{+0.20}_{-0.06}$ & $-8.99^{+0.24}_{-0.00}$ & $-9.13^{+0.14}_{-0.27}$ \\
+H$_2$ & $-8.45^{+0.19}_{-0.09}$ & $-9.10^{+0.13}_{-0.13}$ & $-8.96^{+0.39}_{-0.15}$ \\
+H$_2$ + narrow \HI & $-9.02^{+0.13}_{-0.23}$ & $-9.25^{+0.02}_{-0.10}$ & $-9.23^{+0.17}_{-0.12}$ \\
+H$_2$ + broad \HI & $-8.99^{+0.04}_{-0.27}$ & $-9.35^{+0.09}_{-0.03}$ & $-9.26^{+0.25}_{-0.13}$ \\
+H$_2$ + total \HI & $-9.22^{+0.06}_{-0.28}$ & $-9.43^{+0.01}_{-0.02}$ & $-9.42^{+0.20}_{-0.03}$ \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{table}
+
+Figure~\ref{fig:adopted_sfe} shows the SFE as a function of radius for the different gas components. Each point represents the median SFE of the galaxies contributing to a radial bin of width $0.1r_{25}$. In dwarfs, the narrow \HI\ reservoir appears more efficient at forming stars than the broad \HI\ reservoir throughout the disc. In spirals, narrow \HI\ has the higher star formation efficiency in the inner disc ($r<0.5r_{25}$), while the efficiencies of the narrow and broad components become more similar farther out. In both samples, the apparent star formation efficiency decreases towards the outer disc for total \HI\ and for either atomic component, consistent with the radial decline found in \HI-dominated regions by \citet{Leroy2008}.
+
+The molecular SFE is comparatively flat with radius in spirals, while adding either atomic component introduces a radial decline. Adding \HI\ also lowers the SFE values. The H$_2$+narrow and H$_2$+broad profiles are similar.
+
+In the innermost regions of spirals, the H$_2$+narrow and H$_2$+broad SFEs are close to the molecular-only SFE because the gas in these CO-covered regions is predominantly molecular. Adding either atomic component therefore makes little difference. Farther out, the atomic contribution increases, so adding \HI\ lowers the SFE more and the combined profiles diverge from the molecular-only profile, consistent with the radial decrease in molecular fraction found by \citet{Leroy2008}. In the CO-covered dwarfs, the H$_2$+narrow and H$_2$+broad SFEs are lower than the molecular-only SFE even in the central regions. Unlike spiral centres, these regions already contain a substantial atomic-gas contribution. As this contribution increases outwards, the two combined profiles fall farther below the molecular-only profile.
+
+Table~\ref{tab:sfe} summarises the median SFEs of the dwarf and spiral samples.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{images/ks_individual/adopted_sfe_profiles.pdf}
+\caption[Star formation efficiency with the new kinematic component maps]{Radial SFE profiles for dwarfs (top) and spirals (bottom). Left: the observed SFR divided by total, narrow or broad \HI. Right: H$_2$ and its combinations with either atomic component or total \HI, over identical CO-covered positions. Each point is the median of the galaxy measurements in a $0.1r_{25}$ bin. Shading shows the 16th--84th percentile spread between galaxies for total \HI\ (left) and H$_2$ (right), rather than uncertainty on the median.}
+\label{fig:adopted_sfe}
+\end{figure}
+\FloatBarrier
+\clearpage
+\endgroup

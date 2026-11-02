@@ -1,0 +1,55 @@
+
+
+
+
+\section[Which \HI\ component is more closely linked to star formation?]{Which \HI\ component is more closely linked to star formation?}
+\label{sec:ks_fitting}
+\label{sec:sflaw}
+
+In this section, we test which of the kinematically cold and warm \HI\ components is more closely linked to star formation. We do so by fitting the Kennicutt--Schmidt relation for each gas component and comparing the slopes and correlation strengths, using total \HI\ and CO-traced H$_2$ as references. We investigate whether these relations differ between individual galaxies and between dwarf and spiral galaxies. We describe the fitting method in Section~\ref{sec:ks_fitting_method} and present the gas--SFR relations in Section~\ref{sec:ks_individual_results}.
+
+\subsection[Fitting methodology]{Fitting methodology}
+\label{sec:ks_fitting_method}
+
+Following \citet{Fbigiel2008}, we compare the slopes of the Kennicutt--Schmidt relations for the different gas components. In logarithmic space, the Kennicutt--Schmidt relation in Equation~\ref{eq:SFLaw} becomes
+\begin{equation}
+\label{eq:ks_log_relation}
+\log_{10}\Sigma_{\mathrm{SFR}} = a + N\log_{10}\Sigma_{\mathrm{gas}},
+\end{equation}
+where $a=\log_{10}A$ is the intercept and $N$ is the power-law index.
+
+\citet{Fbigiel2008} used the ordinary least-squares (OLS) bisector to fit their Kennicutt--Schmidt relations. A single OLS regression minimises the vertical or horizontal residuals, depending on which variable is chosen as dependent. The bisector combines these two regressions and treats the axes symmetrically. Several atomic-gas distributions in our sample have considerable scatter or are nearly vertical. We therefore adopt orthogonal regression, which minimises the distances perpendicular to the fitted line and estimates the direction of the distribution directly.
+
+Since neighbouring pixels within a beam contain correlated measurements of the same emission, we sample the maps at positions separated by at least one beam width, both horizontally and vertically. Before doing so, we first match the gas and SFR maps to the same spatial resolution and pixel grid. At each selected position, we use the gas and SFR values from the corresponding pixel.  We fit the Kennicutt--Schmidt relation to these beam-sampled measurements, shown as blue points in Figure~\ref{fig:individual_galaxies}. The grey shading shows all positive pixel values across the mapped field.
+
+Each beam-sampled measurement in the Kennicutt--Schmidt relation has coordinates $(x_i,y_i)$, where $x_i=\log_{10}\Sigma_{\mathrm{gas},i}$ and $y_i=\log_{10}\Sigma_{\mathrm{SFR},i}$, for $i=1,\ldots,n$. Here, $n$ is the number of beam-sampled measurements. We use the orthogonal-regression criterion \citep{Pearson1901,Isobe1990}, with weights defined below. The fitted line minimises the weighted sum of squared perpendicular distances:
+\begin{equation}
+\label{eq:ks_weighted_distance}
+\mathcal{Q}(a,N)
+=\sum_{i=1}^{n} w_i\,d_{\perp,i}^{\,2}
+=\sum_{i=1}^{n} w_i\,\frac{(y_i-a-Nx_i)^2}{1+N^2},
+\end{equation}
+where $N$ is the slope of the Kennicutt--Schmidt relation in Equation~\ref{eq:ks_log_relation}, $a$ is the intercept and $w_i$ is the weight assigned to measurement $i$. The distance $d_{\perp,i}$ is the shortest distance from $(x_i,y_i)$ to the fitted straight line $y=a+Nx$ on the plot of $\log_{10}\Sigma_{\mathrm{SFR}}$ against $\log_{10}\Sigma_{\mathrm{gas}}$.
+
+To reduce the influence of sparsely distributed data points, we give greater weight to points in densely populated parts of the gas--SFR plot and less weight to points in sparse regions. We estimate the local point density using a two-dimensional Gaussian kernel \citep{Scott1992}. For each blue point $i$, we define its position in the logarithmic gas--SFR plot as
+\begin{equation}
+\mathbf{z}_i =
+\begin{pmatrix}
+x_i \\
+y_i
+\end{pmatrix}.
+\end{equation}
+We assign this point a weight proportional to the density of neighbouring blue points in the gas--SFR plot:
+\begin{equation}
+\label{eq:ks_density_weight}
+w_i = \sum_{\substack{j=1\\j\ne i}}^{n}
+\exp\!\left[-\frac{1}{2}
+(\mathbf{z}_i-\mathbf{z}_j)^{\mathrm{T}}
+\mathbf{H}^{-1}
+(\mathbf{z}_i-\mathbf{z}_j)\right],
+\end{equation}
+where the sum includes all other blue points. The matrix $\mathbf{H}$ sets the width and shape of the Gaussian neighbourhood. We use Scott's bandwidth rule \citep{Scott1992}, giving $\mathbf{H}=n^{-1/3}\mathbf{S}$, where $n$ is the number of blue points and $\mathbf{S}$ is the covariance matrix of their logarithmic coordinates. Nearby points contribute strongly to the sum, while distant points contribute very little. A point with more nearby neighbours therefore receives a larger weight. These weights describe the concentration of measurements in the plot; they are not measurement-error weights.
+
+We use the Pearson correlation coefficient $r$ to quantify the strength and direction of the correlation in each Kennicutt--Schmidt relation.
+
+To estimate the uncertainties in the fitted parameters, we generate 2000 bootstrap samples by resampling the paired gas and SFR measurements with replacement. We fit the relation to each resampled data set. We use the 16th and 84th percentiles of the fitted values from these samples to define the lower and upper limits of the 68\% uncertainty interval. These intervals describe sampling uncertainty and exclude systematic uncertainties in the CO-to-H$_2$ conversion and SFR calibration. For nearly vertical relations where the slope is poorly constrained, we report the angle $\theta$ of the fitted line to the horizontal axis. The dashed lines in Figure~\ref{fig:individual_galaxies} show the fitted relations. Table~\ref{tab:individual_ks_summary} gives the fitted values and their uncertainties.

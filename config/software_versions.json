@@ -1,0 +1,12 @@
+{
+  "snakemake": "9.23.1",
+  "numpy": "2.5.1",
+  "scipy": "1.18.0",
+  "astropy": "8.0.1",
+  "pandas": "3.0.3",
+  "matplotlib": "3.11.1",
+  "reproject": "0.21.0",
+  "photutils": "3.0.0",
+  "radio-beam": "0.3.10",
+  "ROHSApy": "0.2.0"
+}

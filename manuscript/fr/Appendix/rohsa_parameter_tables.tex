@@ -1,0 +1,35 @@
+
+\begin{table}[H]
+\centering
+\caption{Paramètres communs aux ajustements ROHSA retenus. Les noms de code correspondent aux paramètres d'entrée du programme. Les dispersions sont indiquées en unités physiques ; elles sont fournies à ROHSA en nombre de canaux.}
+\label{tab:rohsa_common_parameters}
+\begingroup
+
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{lll}
+\toprule
+Paramètre & Nom dans le code & Valeur retenue \\
+\midrule
+Régularisation de l'amplitude & \texttt{lambda\_amp} & 0 \\
+Régularisation de la vitesse centrale & \texttt{lambda\_mu} & 1 \\
+Régularisation de la dispersion & \texttt{lambda\_sig} & 1 \\
+Pénalité globale sur la largeur & \texttt{lambda\_var\_sig} & 0 \\
+Autres pénalités de variance & \texttt{lambda\_var\_amp}, \texttt{lambda\_var\_mu} & 0 \\
+Pénalité de largeur supplémentaire & \texttt{lambda\_lym\_sig} & 0 (désactivée) \\
+Dispersion ajustée minimale & \texttt{lb\_sig} & $1.274\,\Delta v$ \\
+Dispersion ajustée maximale & \texttt{ub\_sig} & 40 km s$^{-1}$ \\
+Dispersion initiale & \texttt{sig\_init} & $\max(8\,\mathrm{km\,s}^{-1},1.5\sigma_{\min})$ \\
+Bornes initiales de dispersion & \texttt{lb\_sig\_init}, \texttt{ub\_sig\_init} & $\sigma_{\min}$, 20 km s$^{-1}$ \\
+Spectre d'initialisation & \texttt{init\_option} & Spectre moyen \\
+Facteur d'amplitude initial & \texttt{amp\_fact\_init} & 0.66 \\
+Limite d'itérations initiales & \texttt{maxiter\_init} & 15\,000 \\
+Limite d'itérations de l'ajustement & \texttt{maxiter} & 800 \\
+Mémoire de l'optimiseur & \texttt{m} & 10 \\
+Carte de bruit fournie & \texttt{noise} & Activée \\
+Régularisation spatiale & \texttt{regul} & Activée \\
+Ajustement multirésolution & \texttt{descent} & Activée \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{table}

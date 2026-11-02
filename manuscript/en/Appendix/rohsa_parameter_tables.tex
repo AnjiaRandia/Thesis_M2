@@ -1,0 +1,35 @@
+
+\begin{table}[H]
+\centering
+\caption{Settings common to the adopted ROHSA fits. The code names identify the corresponding input parameters. Dispersion quantities are shown in physical units; ROHSA receives these values in channels.}
+\label{tab:rohsa_common_parameters}
+\begingroup
+
+\small
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{lll}
+\toprule
+Setting & Code parameter & Adopted value \\
+\midrule
+Amplitude regularisation & \texttt{lambda\_amp} & 0 \\
+Centroid regularisation & \texttt{lambda\_mu} & 1 \\
+Dispersion regularisation & \texttt{lambda\_sig} & 1 \\
+Global width penalty & \texttt{lambda\_var\_sig} & 0 \\
+Other variance penalties & \texttt{lambda\_var\_amp}, \texttt{lambda\_var\_mu} & 0 \\
+Additional width penalty & \texttt{lambda\_lym\_sig} & 0 (disabled) \\
+Minimum fitted dispersion & \texttt{lb\_sig} & $1.274\,\Delta v$ \\
+Maximum fitted dispersion & \texttt{ub\_sig} & 40 km s$^{-1}$ \\
+Initial dispersion & \texttt{sig\_init} & $\max(8\,\mathrm{km\,s}^{-1},1.5\sigma_{\min})$ \\
+Initial dispersion bounds & \texttt{lb\_sig\_init}, \texttt{ub\_sig\_init} & $\sigma_{\min}$, 20 km s$^{-1}$ \\
+Initialisation spectrum & \texttt{init\_option} & Mean spectrum \\
+Initial amplitude factor & \texttt{amp\_fact\_init} & 0.66 \\
+Initialisation optimiser limit & \texttt{maxiter\_init} & 15\,000 \\
+Fitting optimiser limit & \texttt{maxiter} & 800 \\
+Optimiser memory & \texttt{m} & 10 \\
+Supplied noise map & \texttt{noise} & Enabled \\
+Spatial regularisation & \texttt{regul} & Enabled \\
+Multiresolution fitting & \texttt{descent} & Enabled \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{table}

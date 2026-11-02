@@ -1,0 +1,55 @@
+galaxy,category,path,bytes,purpose
+DDO154,THINGS_HI_cube,data/raw/things/DDO154_NA_CUBE_THINGS.FITS,242668800,"Original natural-weighted survey cube; native refits, spatial distribution and gas/SFR comparisons"
+DDO154,SFR_input_map,data/raw/sfr/DDO154_SFRMAP.FITS,4207680,Supplied calibrated SFR map combining FUV and 24-micron observations; original input to this analysis
+DDO53,THINGS_HI_cube,data/raw/things/DDO53_NA_CUBE_THINGS.FITS,177240960,"Original natural-weighted survey cube; native refits, spatial distribution and gas/SFR comparisons"
+DDO53,SFR_input_map,data/raw/sfr/DDO53_SFRMAP.FITS,4207680,Supplied calibrated SFR map combining FUV and 24-micron observations; original input to this analysis
+HO_II,THINGS_HI_cube,data/raw/things/HO_II_NA_CUBE_THINGS.FITS,231439680,"Original natural-weighted survey cube; native refits, spatial distribution and gas/SFR comparisons"
+HO_II,SFR_input_map,data/raw/sfr/HOII_SFRMAP.FITS,4207680,Supplied calibrated SFR map combining FUV and 24-micron observations; original input to this analysis
+IC2574,THINGS_HI_cube,data/raw/things/IC2574_NA_CUBE_THINGS.FITS,354562560,"Original natural-weighted survey cube; native refits, spatial distribution and gas/SFR comparisons"
+IC2574,SFR_input_map,data/raw/sfr/IC2574_SFRMAP.FITS,4210560,Supplied calibrated SFR map combining FUV and 24-micron observations; original input to this analysis
+NGC0628,THINGS_HI_cube,data/raw/things/NGC0628_NA_CUBE_THINGS.FITS,247726080,"Original natural-weighted survey cube; native refits, spatial distribution and gas/SFR comparisons"
+NGC0628,SFR_input_map,data/raw/sfr/N628_SFRMAP.FITS,4207680,Supplied calibrated SFR map combining FUV and 24-micron observations; original input to this analysis
+NGC0628,HERACLES_CO_moment0,data/raw/co/ngc0628_heracles_mom0.fits.gz,301703,Survey CO integrated-intensity map; molecular comparisons
+NGC0628,IRAC_3p6um_input,data/raw/stellar_mass/NGC0628.phot.1_nonan.fits,11517120,3.6-micron image used in arm/interarm measurement
+NGC0925,THINGS_HI_cube,data/raw/things/NGC0925_NA_CUBE_THINGS.FITS,433895040,"Original natural-weighted survey cube; native refits, spatial distribution and gas/SFR comparisons"
+NGC0925,SFR_input_map,data/raw/sfr/N925_SFRMAP.FITS,4207680,Supplied calibrated SFR map combining FUV and 24-micron observations; original input to this analysis
+NGC0925,HERACLES_CO_moment0,data/raw/co/ngc0925_heracles_mom0.fits.gz,171427,Survey CO integrated-intensity map; molecular comparisons
+NGC0925,IRAC_3p6um_input,data/raw/stellar_mass/ngc0925_v7.phot.1.fits,13046400,3.6-micron image used in arm/interarm measurement
+NGC2403,THINGS_HI_cube,data/raw/things/NGC2403_NA_CUBE_THINGS.FITS,1043098560,"Original natural-weighted survey cube; native refits, spatial distribution and gas/SFR comparisons"
+NGC2403,SFR_input_map,data/raw/sfr/N2403_SFRMAP.FITS,16790400,Supplied calibrated SFR map combining FUV and 24-micron observations; original input to this analysis
+NGC2403,HERACLES_CO_moment0,data/raw/co/ngc2403_heracles_mom0.fits.gz,151238,Survey CO integrated-intensity map; molecular comparisons
+NGC2403,IRAC_3p6um_input,data/raw/stellar_mass/ngc2403_v7.phot.1.fits,24909120,3.6-micron image used in arm/interarm measurement
+NGC2903,THINGS_HI_cube,data/raw/things/NGC2903_NA_CUBE_THINGS.FITS,368314560,"Original natural-weighted survey cube; native refits, spatial distribution and gas/SFR comparisons"
+NGC2903,SFR_input_map,data/raw/sfr/N2903_SFRMAP.FITS,4207680,Supplied calibrated SFR map combining FUV and 24-micron observations; original input to this analysis
+NGC2903,HERACLES_CO_moment0,data/raw/co/ngc2903_heracles_mom0.fits.gz,187506,Survey CO integrated-intensity map; molecular comparisons
+NGC2903,IRAC_3p6um_input,data/raw/stellar_mass/NGC2903.phot.1_nonan.fits,18273600,3.6-micron image used in arm/interarm measurement
+NGC2976,THINGS_HI_cube,data/raw/things/NGC2976_NA_CUBE_THINGS.FITS,191615040,"Original natural-weighted survey cube; native refits, spatial distribution and gas/SFR comparisons"
+NGC2976,SFR_input_map,data/raw/sfr/N2976_SFRMAP.FITS,4213440,Supplied calibrated SFR map combining FUV and 24-micron observations; original input to this analysis
+NGC2976,HERACLES_CO_moment0,data/raw/co/ngc2976_heracles_mom0.fits.gz,78615,Survey CO integrated-intensity map; molecular comparisons
+NGC2976,IRAC_3p6um_input,data/raw/stellar_mass/NGC2976.phot.1_nonan.fits,7879680,3.6-micron image used in morphology screening; excluded from arm measurement
+NGC3184,THINGS_HI_cube,data/raw/things/NGC3184_NA_CUBE_THINGS.FITS,309525120,"Original natural-weighted survey cube; native refits, spatial distribution and gas/SFR comparisons"
+NGC3184,SFR_input_map,data/raw/sfr/N3184_SFRMAP.FITS,4213440,Supplied calibrated SFR map combining FUV and 24-micron observations; original input to this analysis
+NGC3184,HERACLES_CO_moment0,data/raw/co/ngc3184_heracles_mom0.fits.gz,160380,Survey CO integrated-intensity map; molecular comparisons
+NGC3184,IRAC_3p6um_input,data/raw/stellar_mass/NGC3184.phot.1_nonan.fits,11698560,3.6-micron image used in arm/interarm measurement
+NGC3351,THINGS_HI_cube,data/raw/things/NGC3351_NA_CUBE_THINGS.FITS,297077760,"Original natural-weighted survey cube; native refits, spatial distribution and gas/SFR comparisons"
+NGC3351,SFR_input_map,data/raw/sfr/N3351_SFRMAP.FITS,4207680,Supplied calibrated SFR map combining FUV and 24-micron observations; original input to this analysis
+NGC3351,HERACLES_CO_moment0,data/raw/co/ngc3351_heracles_mom0.fits.gz,162265,Survey CO integrated-intensity map; molecular comparisons
+NGC3351,IRAC_3p6um_input,data/raw/stellar_mass/NGC3351.phot.1_nonan.fits,8760960,3.6-micron image used in arm/interarm measurement
+NGC4214,THINGS_HI_cube,data/raw/things/NGC4214_NA_CUBE_THINGS.FITS,433926720,"Original natural-weighted survey cube; native refits, spatial distribution and gas/SFR comparisons"
+NGC4214,SFR_input_map,data/raw/sfr/N4214_SFRMAP.FITS,4204800,Supplied calibrated SFR map combining FUV and 24-micron observations; original input to this analysis
+NGC4214,HERACLES_CO_moment0,data/raw/co/ngc4214_heracles_mom0.fits.gz,73423,Survey CO integrated-intensity map; molecular comparisons
+NGC4736,THINGS_HI_cube,data/raw/things/NGC4736_NA_CUBE_THINGS.FITS,290067840,"Original natural-weighted survey cube; native refits, spatial distribution and gas/SFR comparisons"
+NGC4736,SFR_input_map,data/raw/sfr/N4736_SFRMAP.FITS,4213440,Supplied calibrated SFR map combining FUV and 24-micron observations; original input to this analysis
+NGC4736,HERACLES_CO_moment0,data/raw/co/ngc4736_heracles_mom0.fits.gz,167196,Survey CO integrated-intensity map; molecular comparisons
+NGC4736,IRAC_3p6um_input,data/raw/stellar_mass/NGC4736.phot.1_nonan.fits,23333760,3.6-micron image used in morphology screening; excluded from arm measurement
+NGC5194,THINGS_HI_cube,data/raw/things/NGC5194_NA_CUBE_THINGS.FITS,326217600,"Original natural-weighted survey cube; native refits, spatial distribution and gas/SFR comparisons"
+NGC5194,SFR_input_map,data/raw/sfr/N5194_SFRMAP.FITS,4210560,Supplied calibrated SFR map combining FUV and 24-micron observations; original input to this analysis
+NGC5194,HERACLES_CO_moment0,data/raw/co/ngc5194_heracles_mom0.fits.gz,405131,Survey CO integrated-intensity map; molecular comparisons
+NGC5194,IRAC_3p6um_input,data/raw/stellar_mass/NGC5194.phot.1_nonan.fits,21951360,3.6-micron image used in arm/interarm measurement
+NGC6946,THINGS_HI_cube,data/raw/things/NGC6946_NA_CUBE_THINGS.FITS,513633600,"Original natural-weighted survey cube; native refits, spatial distribution and gas/SFR comparisons"
+NGC6946,SFR_input_map,data/raw/sfr/N6946_SFRMAP.FITS,4213440,Supplied calibrated SFR map combining FUV and 24-micron observations; original input to this analysis
+NGC6946,HERACLES_CO_moment0,data/raw/co/ngc6946_heracles_mom0.fits.gz,447471,Survey CO integrated-intensity map; molecular comparisons
+NGC6946,IRAC_3p6um_input,data/raw/stellar_mass/ngc6946_v7.phot.1.fits,23135040,3.6-micron image used in arm/interarm measurement
+NGC7793,THINGS_HI_cube,data/raw/things/NGC7793_NA_CUBE_THINGS.FITS,390962880,"Original natural-weighted survey cube; native refits, spatial distribution and gas/SFR comparisons"
+NGC7793,SFR_input_map,data/raw/sfr/N7793_SFRMAP.FITS,4210560,Supplied calibrated SFR map combining FUV and 24-micron observations; original input to this analysis
+NGC7793,IRAC_3p6um_input,data/raw/stellar_mass/NGC7793.phot.1_nonan.fits,12516480,3.6-micron image used in arm/interarm measurement

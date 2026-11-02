@@ -1,0 +1,239 @@
+\chapter[Introduction]{Introduction}
+\label{Chap:Intro}
+\counterwithout{table}{chapter} 
+\counterwithout{figure}{chapter}
+
+\makeatletter
+\setlength{\@fptop}{0pt} 
+\makeatother
+
+Galaxies are gravitationally bound systems composed primarily of stars, gas, and dust; their evolution is strongly influenced by the interplay between these components. Star formation is a fundamental process in galaxy evolution, regulating the growth of stellar populations and influencing the physical properties of galaxies over cosmic time. The process of star formation within these systems is fuelled by the gas in the interstellar medium (ISM), which fills the vast regions between stars. Stars form within cold, dense molecular clouds composed predominantly of molecular hydrogen (H$_2$). This molecular phase forms from the diffuse atomic gas through thermodynamic and chemical transitions that remain to be fully understood \citep{Kennicutt1998, Klessen2016}. Consequently, the rate at which new stars form, commonly quantified as the star formation rate (SFR), is intrinsically linked to the physical properties and thermodynamic state of the interstellar gas across all its phases \citep{Fbigiel2008, Leroy2008}. This thesis examines the link between star formation, the molecular gas and the phases of the \HI. \\\indent
+A crucial step in the pathway from diffuse gas to star formation is the transition from atomic to molecular hydrogen. Molecular hydrogen forms primarily through catalytic reactions on the surfaces of interstellar dust grains, as gas-phase formation is inefficient under typical interstellar conditions \citep{Gould1963, Hollenbach1971}. Once formed, H$_2$ molecules are susceptible to photodissociation by ultraviolet (UV) radiation in the Lyman-Werner bands. The survival of molecular hydrogen therefore largely depends on the shielding from this dissociating radiation, which is provided by dust absorption and by H$_2$ self-shielding at sufficiently high column densities \citep{Draine1996, Krumholz2009, Sternberg2014}.\\\indent
+Theoretical models predict that this shielding becomes effective in regions where sufficient column density has accumulated \citep{Krumholz2009, Sternberg2014}. The colder and denser phase of the \textrm{H\textsc{i}}, also known as the cold neutral medium (CNM), with its relatively high density ($\sim$10--100 cm$^{-3}$), can more readily accumulate the column density required to shield molecules from photodissociation compared to the warmer phase called the warm neutral medium (WNM) ($\sim 0.1$--1 cm$^{-3}$) \citep{Krumholz2009, Sternberg2014, Syed2020}. Furthermore, the H$_2$ formation rate on dust grains scales with the product of atomic hydrogen and dust grain number densities, meaning that denser CNM regions convert atomic gas to molecular form more efficiently \citep{Hollenbach1979, Wakelam2017}. The CNM thus represents both the environment where shielding conditions are met and the reservoir of atomic gas from which molecular clouds condense \citep{Wolfire2003, Klessen2016}.\\\indent
+Despite the theoretical importance of the CNM as a precursor to molecular cloud formation, empirical studies of the relationship between star formation and the ISM have traditionally focused on either the total \textrm{H\textsc{i}} content or the molecular gas traced by carbon monoxide (CO) emission \citep{Kennicutt1998, Fbigiel2008, Leroy2008}. This is largely because separating the CNM from the WNM observationally has been challenging. The two phases contribute to the same 21 cm emission line and are not straightforward to distinguish observationally, with absorption measurements against background continuum sources preferentially tracing the cold component but providing only a sparse spatial sampling, while spectral decomposition techniques offer an alternative approach that has only recently become sophisticated enough for systematic application to external galaxies \citep{Heiles2003a, Marchal2019, Syed2020}. \\\indent
+Understanding the relationships between the different ISM phases and star formation is essential for describing the evolution of galaxies. Nearby galaxies serve as ideal laboratories for such investigations, as they can be observed in their entirety, unlike our own Milky Way where our position within the disc limits our view \citep{Leroy2008}. Moreover, establishing quantitative relationships between the CNM and molecular gas would provide a valuable diagnostic tool for studying star formation in environments where CO observations are unavailable or unreliable. This is particularly relevant for low-metallicity dwarf galaxies, where reduced dust shielding leads to more efficient CO photodissociation, yet H$_2$ may still persist in regions where self-shielding is effective \citep{Bolatto2013}.\\\indent
+While power-law relations between gas surface density and star formation rate surface density, commonly known as the Kennicutt-Schmidt laws, remain one of the most widely used empirical frameworks for relating gas and star formation \citep{Schmidt1959, Kennicutt1998}, the role of individual ISM phases in these relations is still poorly constrained by observations. In their most common form, these relations
+treat the neutral gas as a single reservoir, summing \HI\ and H$_2$ into one total gas
+surface density, which obscures which gas phase is actually driving them. Resolved
+THINGS observations show that the star formation rate surface density scales roughly
+linearly with $\Sigma_{\mathrm{H_2}}$ alone, while \HI\ saturates near
+$9$--$10\ \mathrm{M_\odot\,pc^{-2}}$ and correlates only weakly with star formation once
+that threshold is reached \citep{Fbigiel2008}. Simulations of the cold neutral medium
+in spiral discs find, in turn, that the star formation rate density follows a scaling
+law with CNM column density similar to the total-gas Kennicutt-Schmidt law, with the
+CNM tracing the star-forming gas more closely than the neutral atomic gas as a whole
+\citep{Smith2023}. The goal of this study is to provide a comprehensive analysis of the relationship between star formation rate surface density and gas surface density in a sample of nearby galaxies, with particular emphasis on examining whether the kinematically cold component of \textrm{H\textsc{i}} can serve as an effective tracer for the conditions that precede molecular cloud formation and star formation. By applying modern spectral decomposition techniques to high-resolution \textrm{H\textsc{i}} data cubes, this work aims to quantify how kinematically cold \textrm{H\textsc{i}}, which serves as a proxy for the thermally defined CNM, correlates with molecular gas content and star formation activity. Ultimately, this study seeks to test the theoretical prediction that CNM abundance governs the efficiency of the \textrm{H\textsc{i}}-to-H$_2$ transition and subsequent star formation.
+
+
+\section{The interstellar medium}
+\subsection{Overview}
+
+The space between stars in galaxies is not devoid of matter but is filled with a complex mixture of gas, dust, relativistic charged particles (cosmic rays), and electromagnetic fields. This diffuse material constitutes the interstellar medium \citep{ISF2011, Ferriere_2001}.\\\indent
+The gaseous component dominates the mass budget of the ISM and is typically concentrated in cloud-like structures of varying sizes and morphologies \citep{ISF2011}. Figure \ref{fig:monkeyhead}, for example, showcases a molecular hydrogen (H$_2$) cloud. Hydrogen is the most abundant element in galaxies and exists in several forms: atomic (commonly denoted \textrm{H\textsc{i}}), molecular (H$_2$), and ionised (H\textsc{ii}). In the Milky Way, the ISM is composed of approximately 70\% hydrogen, 28\% helium, and 2\% heavier elements by mass \citep{Ferriere_2001}. In astronomical nomenclature, all elements heavier than helium are collectively referred to as ``metals'', including carbon, nitrogen, and oxygen.\\\indent
+Interstellar dust consists of small solid grains, typically less than a micrometre in size, predominantly composed of silicates, carbonaceous materials, and iron-bearing compounds \citep{Zhukovska_2008}. Some molecular gas clouds appear as dark patches against the stellar background because their dust content is opaque to visible light, absorbing and scattering optical radiation from background stars. The Coalsack Nebula (Figure \ref{fig:coalsack}) provides a striking example of such ``dark clouds'' or ``absorption nebulae'' \citep{ISF2011}.\\\indent
+There is significant scientific interest in understanding the properties and dynamics of the ISM because the life cycles of stars and interstellar matter are intimately connected. Stars form from the gravitational collapse of interstellar gas clouds. Throughout their main-sequence lifetime, stars fuse hydrogen into helium in their cores. At the end of stellar evolution, when nearly all hydrogen fuel is exhausted, stars either expand and eject their outer layers as planetary nebulae or, for more massive progenitors, explode as supernovae. In either scenario, processed material enriched with heavy elements is returned to the ISM, becoming available as raw material for subsequent generations of stars \citep{ISF2011}. The dynamics of the ISM therefore determine where and when stars are born within a galaxy, and the properties of newly formed stars and their planetary systems are closely linked to the chemical and physical conditions of their natal environments.
+
+
+\subsection{Phases of the gaseous interstellar medium}
+
+The gaseous ISM is far from homogeneous; it exhibits vastly different physical properties depending on the location within a galaxy. Due to this complexity, no single classification scheme adequately captures all its characteristics. Various studies have proposed different frameworks for describing the ISM phases. \citet{Klessen2016} described five distinct phases, illustrated in the table below:
+
+\begin{table}[htbp]
+    \centering
+    \caption{\textbf{Description and typical physical properties of the ISM.} Values compiled from \citet{Klessen2016} and \citet{Ferriere_2001}.}
+    \label{tab:ISMcomponents}
+    \small
+    \setlength{\tabcolsep}{6pt}
+    \renewcommand{\arraystretch}{1.15}
+
+    \begin{tabularx}{\linewidth}{L{3.2cm} L{6.3cm} c c c}
+        \toprule
+Phase & Description & Temperature & Density & Ionisation \\
+              & & [K] & [cm$^{-3}$] & \\
+        \midrule
+Dense cold molecular gas (H$_2$) &
+Cold, dense gas consisting primarily of molecular hydrogen (H$_2$). &
+        10--20 & $>10^{2}$ & $<10^{-6}$ \\
+
+Cold Neutral Medium (CNM) &
+Cold, dense, primarily neutral atomic gas. &
+        50--100 & 20--50 & $10^{-4}$ \\
+
+Warm Neutral Medium (WNM) &
+Warm, diffuse, neutral atomic gas. &
+        6000--10000 & 0.2--0.5 & $\approx 0.1$ \\
+
+Warm Ionised Medium (WIM) &
+Warm, diffuse, (partially to fully) ionised gas. &
+        $\sim 8000$ & 0.2--0.5 & 1.0 \\
+
+Hot Ionised Medium (HIM) &
+Hot, diffuse, ionised gas. &
+        $\sim 10^{6}$ & $\sim 10^{-2}$ & 1.0 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+
+\subsubsection{Cold and warm neutral medium}
+
+When neutral atomic hydrogen (\textrm{H\textsc{i}}) is in thermal equilibrium, meaning its temperature remains stable due to a balance between heating and cooling processes, it exists in two thermally stable phases: the CNM and the WNM \citep{field1969, Wolfire2003}. Dense clouds of CNM are commonly found embedded within a diffuse WNM envelope.\\\indent
+Gas with temperatures intermediate between these two stable phases is termed the lukewarm neutral medium (LNM) or thermally unstable neutral medium (UNM). This gas is thermally unstable and will eventually either increase in density and cool to become part of the CNM, or become more diffuse and heat up to join the WNM \citep{field1969, Bialy2019}. The existence of significant amounts of gas in this thermally unstable regime has been confirmed observationally \citep{Heiles2003b, kanekar2003, Murray2018}.\\\indent
+The WNM at its typical density cannot spontaneously transition into CNM. However, an isothermal compression of the WNM by a factor of two to four is sufficient to induce a phase transition. In other words, CNM forms when WNM experiences increased pressure and enters a thermally unstable phase. Such transitions can be driven by transient phenomena including supernova explosions, stellar winds, or large-scale turbulent compressions \citep{Saury2014, Klessen2016}.
+
+\begin{figure}[htbp]
+	\centering
+    \begin{minipage}{0.45\linewidth}
+        \centering
+        \includegraphics[width=.9\linewidth]{images/Monkey-Head-Nebula.pdf}
+        \subcaption{NGC 2174, or Monkey Head Nebula}
+        \label{fig:monkeyhead}
+    \end{minipage}
+    \begin{minipage}{0.45\linewidth}
+        \centering
+        \includegraphics[width=.8\linewidth]{images/Part_of_the_Coalsack_Nebula_compresed.pdf}
+        \subcaption{Coalsack Nebula}
+        \label{fig:coalsack}
+    \end{minipage}
+    \caption{Left: NGC 2174, also known as the Monkey Head Nebula, showcasing the cloud-like formation of H$_2$ gas. Image credit: Hubble Space Telescope. Right: The Coalsack Nebula, a molecular cloud in the constellation Crux, appearing as a dark patch when observed with the naked eye. Image credit: ESO.}
+\end{figure}
+
+\subsubsection{Molecular gas}
+
+The molecular phase of the ISM is dominated by H$_2$, though it also contains simple molecules such as carbon monoxide (CO) and water (H$_2$O), as well as more complex organic species including methanol (CH$_3$OH) and sugar-related molecules like glycolaldehyde (CH$_2$OHCHO) \citep{sugar2000}. Molecular clouds are the densest regions of the ISM, with typical number densities exceeding $10^2$ cm$^{-3}$ (Table \ref{tab:ISMcomponents}) and can contain dust grains. Despite being the densest ISM phase, this density remains far lower than terrestrial atmospheric conditions, which are on the order of $10^{19}$ particles per cubic centimetre. The largest molecular gas structures are referred to as Giant Molecular Clouds (GMCs), and in galaxies, these GMCs serve as the principal sites of star formation \citep{Klessen2016}.
+
+\subsubsection{Warm and hot ionised medium}
+
+The warm ionised medium (WIM) and hot ionised medium (HIM) represent the ionised phases of the ISM. The WIM has temperatures of approximately 8000 K and is maintained by ionising radiation from massive stars, while the HIM reaches temperatures of $\sim 10^6$ K and is primarily heated by supernova explosions \citep{Ferriere_2001}. Although these phases are important components of the ISM ecology, they are not the primary focus of this study, which concentrates on the neutral atomic and molecular phases most directly relevant to star formation.
+
+
+\subsection{Tracing the phases of neutral atomic hydrogen}
+\label{subsec:tracing_methods}
+
+The properties of the ISM can be studied through observations of emission and absorption lines from different atomic and molecular species. Emission lines arise when electrons in atoms transition from higher to lower energy states, releasing photons at characteristic frequencies determined by the energy difference between levels. Absorption lines occur when atoms absorb photons of specific frequencies, causing electrons to transition to higher energy states. Since energy levels are quantised, each element and molecule possesses unique spectral signatures.
+
+\begin{figure}[t]
+    \centering
+    \begin{minipage}{0.9\linewidth}
+        \centering
+        \includegraphics[width=.9\linewidth]{images/Htransitions.pdf}
+    \end{minipage}
+    \caption{The energy level diagram of the hydrogen atom. $n$ represents the principal quantum number of the electron orbital. $\Delta E$ indicates the energy of the spin-flip transition responsible for the 21 cm emission line. Image credit: DARA Foundation Astrophysics - Interstellar Gas part 2.}
+    \label{fig:Hseries}
+\end{figure}
+
+\subsubsection{The 21 cm hyperfine transition}
+
+Neutral atomic hydrogen (\textrm{H\textsc{i}}) can be observed through its 21 cm wavelength hyperfine transition, which lies in the radio portion of the electromagnetic spectrum. The electronic ground state of the hydrogen atom is split into two closely spaced energy levels (Figure \ref{fig:Hseries}): a higher energy state where the spins of the electron and proton are parallel (excited state, $S=1$), and a lower energy state where they are anti-parallel (ground state, $S=0$). A transition between these levels, commonly known as the ``spin-flip'' transition, corresponds to an energy difference of $\Delta E = 5.87 \times 10^{-6}$ eV, producing a photon with frequency $\nu = 1.4204$ GHz or wavelength $\lambda = 21.106$ cm \citep{ISF2011}.
+Unlike CO(1--0), which is optically thick and confined to the dense,
+star-forming molecular phase, 21~cm emission is essentially optically thin across
+most of the interstellar medium and traces the diffuse atomic gas far from sites of
+active star formation, allowing it to be detected well beyond the stellar disc where
+the gas is too diffuse or too weakly shielded to host a molecular phase. Deep 21~cm
+surveys have repeatedly confirmed that \HI\ discs extend well beyond the optical
+disc: the \HI\ radius at which the surface density falls to
+$1\ \mathrm{M_\odot\,pc^{-2}}$, $R_{\mathrm{HI}}$, exceeds the optical radius
+$R_{25}$ by a factor of $\sim 1.5$ on average, with a tail towards considerably
+larger ratios \citep{Broeils1997, Wang2016}, and recent WALLABY pilot observations of
+a statistical sample of local galaxies find that, on average, only about two-thirds
+($68\%$) of the total \HI\ mass is contained within $R_{25}$, with the remainder
+residing in low surface density gas at larger radii \citep{Lee2025}. This extended
+atomic gas reservoir, largely inert to star formation but dynamically coupled to the
+disc, has proven a key tracer of galaxy interactions, accretion, and the outer mass
+distribution that optical observations alone cannot access.
+
+\subsubsection{Absorption-emission techniques for phase separation}
+
+The classical method for determining the physical properties of \textrm{H\textsc{i}}, particularly distinguishing between the CNM and WNM, combines 21 cm emission and absorption observations \citep{Kulkarni1988, Dickey1990, Heiles2003a}. This technique relies on the fact that absorption is primarily sensitive to the CNM due to its high optical depth, which results from the combination of high density and low temperature relative to the WNM \citep{kanekar2003, Roy2013}.\\\indent 
+In the two-phase model of the ISM, the spin temperature $T_s$ (which characterises the relative populations of the two hyperfine levels) is related to the kinetic temperature $T_k$ of the gas. For the CNM, collisions are sufficiently frequent to thermalise the hyperfine levels, resulting in $T_s \approx T_k$ in the range 40--200 K. For the WNM, the lower density means that collisions alone cannot thermalise the line, and $T_s$ may be significantly lower than $T_k$ unless Lyman $\alpha$ radiation couples the spin and kinetic temperatures \citep{Field1958, Liszt2001, Heiles2003b}.\\\indent
+\citet{Heiles2003a, Heiles2003b} conducted an extensive absorption-emission survey (the Millennium Arecibo 21 Centimeter Absorption-Line Survey) of 79 continuum sources and developed sophisticated Gaussian decomposition methods to separate CNM and WNM components. They found that the CNM spin temperature histogram peaks at approximately 40 K, and that about 60\% of all \textrm{H\textsc{i}} resides in the WNM phase. Importantly, they also found evidence that a significant fraction of the WNM (at least 48\%) lies in the thermally unstable temperature range of 500--5000 K.\\\indent
+However, observing absorption lines requires sufficiently bright, compact radio continuum sources in the background, and the scarcity of such sources severely limits the spatial coverage achievable with this method, particularly for extragalactic observations \citep{kanekar2003, Murray2018}. For the Milky Way, large absorption surveys such as 21-SPONGE \citep{Murray2018} and THOR \citep{Beuther2016} have expanded the number of sightlines probed, but mapping the CNM and WNM phases across entire external galaxies remains impractical using absorption techniques alone.
+
+\subsubsection{Gaussian decomposition of emission spectra}
+\label{subsubsec:gaussian_decomposition}
+
+
+Given the limitations of absorption observations, alternative approaches have been developed to extract phase information from \textrm{H\textsc{i}} 21 cm emission spectra alone. These methods typically rely on the assumption that the CNM and WNM have characteristically different velocity dispersions: CNM components are kinematically narrow ($\sigma_v \sim 1$--6 km s$^{-1}$) due to their low temperatures, while WNM components are kinematically broad ($\sigma_v \sim 6$--15 km s$^{-1}$) due to their higher thermal velocities and turbulent motions \citep{Young2003, deBlok2006, Ianjamasimanana2012}.\\\indent
+
+Early studies demonstrated that these kinematically distinct components can be identified from \textrm{H\textsc{i}} emission profiles. \citet{Young2003} fitted Gaussian components to the \textrm{H\textsc{i}} velocity profiles of seven nearby dwarf galaxies and identified narrow components with $\sigma_v \sim 3$--5 km s$^{-1}$ and broad components with $\sigma_v \sim 8$--13 km s$^{-1}$. The narrow components showed a clumpy distribution and tended to be located near star formation regions, whereas the broad components showed a more ubiquitous distribution. \citet{deBlok2006} subsequently fitted two-component Gaussian models to \textrm{H\textsc{i}} profiles in NGC 6822, selecting preferred models based on reduced $\chi^2$ values. They likewise identified narrow and broad components, with mean velocity dispersions of $\sim4$ and $\sim8$ km s$^{-1}$, respectively.\\\indent
+
+However, fitting individual \textrm{H\textsc{i}} profiles can be problematic because typical line-of-sight velocity profiles have low to moderate signal-to-noise ratios, making their shapes susceptible to noise. To overcome this limitation, \citet{Ianjamasimanana2012} introduced the ``super-profile'' technique, in which individual \textrm{H\textsc{i}} velocity profiles from The \textrm{H\textsc{i}} Nearby Galaxy Survey (THINGS) are aligned in velocity and stacked to construct high signal-to-noise composite profiles. By fitting these super-profiles with double Gaussian models, they identified narrow ($\sigma_v \sim 3.4$--8.6 km s$^{-1}$, average $6.5\pm1.5$ km s$^{-1}$) and broad ($\sigma_v \sim 10.1$--24.3 km s$^{-1}$, average $16.8\pm4.3$ km s$^{-1}$) components, which they interpreted as evidence for the presence of CNM and WNM phases.\\\indent
+
+Subsequent work extended the super-profile analysis to examine variations in the properties of the narrow and broad components. \citet{Ianjamasimanana2015} stacked individual \textrm{H\textsc{i}} velocity profiles and decomposed them into broad and narrow Gaussian components, studying the \textrm{H\textsc{i}} velocity dispersion and surface density as a function of radius in 22 galaxies from THINGS.\\\indent
+
+A further development focused on making Gaussian decomposition of individual profiles more robust and fully automated. \citet{Oh2019} introduced BAYGAUD (BAYesian GAUssian Decomposer), a Bayesian Markov Chain Monte Carlo algorithm that fits multiple Gaussian models to individual line-of-sight velocity profiles and selects the optimal number of components using Bayesian model selection. The decomposed components can then be classified as kinematically cold or warm based on their velocity dispersions. Unlike conventional $\chi^2$-based fitting, BAYGAUD reduces the sensitivity to initial parameter estimates and allows profile decomposition and component classification to be performed in a fully automated manner, making the approach suitable for large \textrm{H\textsc{i}} surveys.\\\indent
+
+\citet{Park2022} applied BAYGAUD to NGC 6822 and found that kinematically cold \textrm{H\textsc{i}} components correlate with regions of active star formation. Building on this Bayesian decomposition approach, \citet{KimOh2022} introduced a new method for constructing \textrm{H\textsc{i}} super-profiles in which the velocity profiles are first decomposed into an optimal number of Gaussian components using BAYGAUD, after which the decomposed components are aligned in velocity and co-added. This approach was designed to reduce the effects of asymmetric velocity profiles, turbulent gas motions, and beam smearing on conventional super-profiles, while retaining the improved signal-to-noise provided by stacking.\\\indent
+
+More recently, \citet{Park2025} explored the potential of kinematically colder \textrm{H\textsc{i}} components (defined as those with $\sigma_v < 6$ km s$^{-1}$) as tracers for star-forming gas in seven nearby galaxies spanning a range of metallicities. They found that these narrow components are often clumpier than broader components and tend to be morphologically associated with regions of active star formation, though the correlation may break down at high physical resolutions where spatial offsets between gas and star formation become apparent.
+
+\subsubsection{Kinematically cold versus thermally cold hydrogen}
+\label{subsubsec:kinematic_vs_thermal}
+
+It is important to distinguish between ``kinematically cold'' and ``thermally cold'' \textrm{H\textsc{i}}. The thermally defined CNM and WNM are characterised by their physical temperatures, which can only be directly measured through absorption-emission techniques that constrain the spin temperature. In contrast, kinematic decomposition methods identify components based on their velocity dispersions, which reflect a combination of thermal broadening, turbulent motions, and non-thermal processes.\\\indent
+While narrow velocity dispersions are generally associated with cold gas (since thermal broadening scales with temperature), several factors can complicate this interpretation. Intrinsically narrow lines can be broadened by turbulent motions, and the same apparent effect can arise artificially from beam smearing in galaxies with ordered rotation \citep{Ianjamasimanana2012, Caldu-Primo2013, Stilp2013}. Furthermore, multiple cold clouds at different velocities along the same line of sight can produce composite profiles that appear broader than individual components.\\\indent
+Throughout this study, the terms ``kinematically cold'' and ``kinematically warm'' \textrm{H\textsc{i}} are preferred when referring to components identified through Gaussian decomposition of emission spectra, to acknowledge that these may not correspond exactly to the thermally defined CNM and WNM phases. This distinction is particularly important when interpreting correlations with star formation, as the physical connection between narrow-line \textrm{H\textsc{i}} and the conditions necessary for molecular cloud formation involves complex processes including thermal instability, dust shielding, and gravitational collapse \citep{Schaye2004, Krumholtz2011, Klessen2016}.
+
+\subsubsection{Tracing molecular hydrogen}
+
+Unlike \textrm{H\textsc{i}}, direct observation of H$_2$ at the typical temperatures found in molecular clouds ($\sim$10--40 K) is extremely challenging. As a homonuclear diatomic molecule, H$_2$ lacks a permanent electric dipole moment and has a low moment of inertia. Its lowest rotational transitions require excitation temperatures of approximately 540 K, far exceeding typical molecular cloud temperatures \citep{Ferriere_2001, ISF2011}.\\\indent
+One approach to directly detect H$_2$ is through its ultraviolet absorption lines, but this requires a sufficiently bright hot star aligned along the line of sight, making large-scale mapping impractical. Instead, carbon monoxide (CO) is commonly used as a tracer for molecular gas. CO is relatively abundant, and its rotational transitions can be easily excited at low temperatures. The molecular hydrogen column density is derived from CO observations using a conversion factor, commonly denoted $X_{\mathrm{CO}}$ or $\alpha_{\mathrm{CO}}$, which depends on environmental factors including metallicity \citep{Bolatto2013}.\\\indent
+This method has important limitations, particularly in low-metallicity environments. Since CO is more easily photodissociated than H$_2$ by ultraviolet radiation, it survives only in the densest, most shielded regions of molecular clouds. This leaves a significant fraction of H$_2$ untraced by CO observations, creating what is termed ``CO-dark'' molecular gas \citep{Bolatto2013, Wolfire2010}. This effect is most pronounced in the outer regions of molecular clouds and in low-metallicity galaxies where dust shielding is less effective.
+
+
+\section{Star formation and the interstellar medium}
+\label{sec:SF_and_ism}
+
+\subsection{Overview of the star formation process}
+
+Stars form within molecular clouds and GMCs when gravitational collapse overcomes the internal pressure support of the gas. The condition for self-gravitating collapse can be characterised by the Jeans length ($r_J$), which represents the minimum radius at which a spherical gas cloud of uniform density becomes gravitationally unstable:
+
+\begin{equation}
+    r_J \sim \frac{a_0}{(G\rho_0)^{1/2}}
+\end{equation}
+
+\noindent where $G$ is the gravitational constant, $\rho_0$ is the initial gas density, and $a_0$ is the sound speed. Since the Jeans length is inversely proportional to the square root of density, gravitational collapse can be triggered by external compression events such as nearby supernova explosions, shock waves, cloud-cloud collisions, or galaxy interactions. Alternatively, collapse may proceed spontaneously when a cloud's mass exceeds the Jeans mass \citep{Jeans1902, ISF2011}.\\\indent
+During collapse, portions of the contracting cloud may themselves become gravitationally unstable, leading to fragmentation into smaller, denser substructures. Each fragment continues to contract until it becomes sufficiently opaque to trap the energy released by cooling processes. This leads to the formation of a hot, pressure-supported core that continues to contract, eventually forming a protostar \citep{ISF2011, Klessen2016}.
+
+\subsection{The \textrm{H\textsc{i}}-to-H$_2$ transition and its role in star formation}
+
+Since the diffuse neutral ISM is predominantly composed of \textrm{H\textsc{i}} while star-forming GMCs consist mainly of H$_2$, there must be a transition stage in cloud evolution where atomic hydrogen converts to molecular hydrogen. This \textbf{\textrm{H\textsc{i}}-to-H$_2$ transition} plays a fundamental role in the evolution of the ISM and the process of star formation \citep{Lee2012, Sternberg2014, Klessen2016}.\\\indent
+The star formation rate correlates strongly with the \textrm{H\textsc{i}}-to-H$_2$ transition \citep{Krumholtz2011} because the conditions required for H$_2$ formation are similar to those needed for star formation. For gas to collapse and form stars, it must cool sufficiently to overcome thermal pressure support. However, interstellar radiation fields (ISRF) can heat the gas, counteracting this cooling. The presence of H$_2$ often indicates the existence of dust grains, which serve dual roles: they act as catalysts for the \textrm{H\textsc{i}}-to-H$_2$ transition (since most H$_2$ forms on grain surfaces) and provide shielding from the ISRF, preventing gas heating while protecting H$_2$ molecules from photodissociation \citep{Klessen2016}.\\\indent
+While metal-line cooling dominates in metal-rich regions, H$_2$ can also serve as a coolant in low-metallicity environments ($< 0.1\,Z_\odot$) or where the ISRF is weak, enabling star formation even in primordial or metal-poor clouds \citep{Glover2014}.
+
+\subsection{Empirical star formation laws}
+\label{sec:sfr_ism_relationship}
+
+As discussed in the previous sections, the ISM provides the fuel for star formation, with its different phases contributing in various ways to the process. Understanding the relationship between the ISM and star formation is crucial for developing accurate models of galaxy evolution. However, on galactic scales, the complexity of the relevant physical processes precludes purely theoretical predictions. Since star formation correlates well with gas properties, it is common to describe the link between star formation and the ISM using empirical power-law relations, often referred to as star formation laws.\\\indent
+\citet{Schmidt1959, Schmidt1963} proposed a power-law relation between the volume star formation rate density $f$ and the gas volume density $\rho_{\mathrm{gas}}$:
+
+\begin{equation}
+    f \propto \rho_{\mathrm{gas}}^n
+\end{equation}
+
+\noindent Subsequently, one of the most widely used formulations relates the star formation rate per unit area (the SFR surface density, $\Sigma_{\mathrm{SFR}}$) to the gas surface density ($\Sigma_{\mathrm{gas}}$):
+
+\begin{equation}
+    \Sigma_{\mathrm{SFR}} = A\,(\Sigma_{\mathrm{gas}})^N
+    \label{eq:SFLaw}
+\end{equation}
+
+\noindent This relation is commonly referred to as the Kennicutt-Schmidt law. Here, $N$ is the power-law index (or slope), and $A$ is the normalisation coefficient. Surface densities have the practical advantage of being directly observable for external galaxies, unlike volume densities which require assumptions about the gas distribution along the line of sight. $\Sigma_{\mathrm{SFR}}$ is typically measured in $M_\odot\,\mathrm{kpc}^{-2}\,\mathrm{yr}^{-1}$ and $\Sigma_{\mathrm{gas}}$ in $M_\odot\,\mathrm{pc}^{-2}$.\\\indent
+The value of $N$ has physical implications for how star formation is regulated. A value of $N = 1$ implies that the SFR increases linearly with gas availability. For $N > 1$, higher density regions form stars more efficiently than lower density regions, while $N < 1$ indicates diminishing star formation efficiency at higher gas densities.\\\indent
+\citet{Kennicutt1998} studied the correlation between disc-averaged $\Sigma_{\mathrm{SFR}}$ and $\Sigma_{\textrm{H\textsc{i}}+\mathrm{H}_2}$ for a sample of 61 nearby normal spiral galaxies and 36 starburst galaxies. He found $N = 2.47 \pm 0.39$ for normal spirals alone and $N = 1.4 \pm 0.15$ for the combined sample, later updated to $N = 1.41 \pm 0.07$ by \citet{delosReyes2019}. The value $N \approx 1.4$ has been widely adopted as a baseline for many star formation, galaxy evolution, and cosmological simulations \citep{SchayetoDalla2008, FOREVER22, FLAMINGO}.\\\indent
+The power-law index varies depending on the spatial scale, galaxy type, and gas component considered. \citet{Boissier2003} found $N \approx 2$ for 16 galaxies. For the Milky Way, \citet{Misiriotis2006} derived $N = 2.18 \pm 0.20$, while for M33, \citet{Heyer2004} obtained $N = 3.3 \pm 0.1$. When considering molecular gas alone, \citet{Leroy2005} found $N = 1.3 \pm 0.1$ for CO in dwarf galaxies, and \citet{Fbigiel2008} showed that for spiral galaxies $N = 1.0 \pm 0.2$ for $\Sigma_{\mathrm{H}_2}$, suggesting a nearly linear relationship between molecular gas and star formation.\\\indent
+An alternative formulation of the ISM-SFR relationship is the star formation efficiency (SFE):
+
+\begin{equation}
+    \mathrm{SFE} = \frac{\Sigma_{\mathrm{SFR}}}{\Sigma_{\mathrm{gas}}}
+    \label{eq:sfe}
+\end{equation}
+
+\noindent The SFE is measured in yr$^{-1}$ and can be interpreted as the fraction of gas converted into stars per unit time. It is also the inverse of the gas depletion time ($t_{\mathrm{dep}} = 1/\mathrm{SFE}$), which represents the time required for ongoing star formation to consume the entire gas reservoir \citep{Leroy2008, Yu-Hsuan2024}.
+
+\subsection{Star formation thresholds and the role of cold gas}
+
+The presence of gas alone does not guarantee star formation. Observationally, star formation follows a monotonic trend at high gas densities but exhibits a sharp decline at low densities. There exists a critical surface density ($\Sigma_{\mathrm{crit}}$), often referred to as the star formation threshold, below which gas cannot efficiently form stars. This threshold has been observed to lie in the range 5--10 $M_\odot\,\mathrm{pc}^{-2}$ \citep{Kennicutt1998, Martin2001}.\\\indent
+Various physical mechanisms have been proposed to explain these thresholds, including large-scale gravitational instabilities, shear, metallicity effects, and turbulence \citep{Leroy2008, Sternberg2014, Federrath2015}. Of particular relevance to this study, \citet{Schaye2004} demonstrated that the drop in thermal velocity dispersion associated with the transition from WNM to CNM triggers gravitational instability, leading to cloud collapse and star formation. He proposed that the condition where \textrm{H\textsc{i}} is typically cold, resulting in thermogravitational instability, can serve as a star formation threshold, predicting $\Sigma_{\mathrm{crit}} \approx 3$--10 $M_\odot\,\mathrm{pc}^{-2}$.\\\indent
+Since previous studies relied on the assumption that CNM is found where H$_2$ formation is efficient, this work aims to test that hypothesis directly by examining correlations between star formation and the individual gas phases, with particular emphasis on the kinematically cold component of the \textrm{H\textsc{i}}. To better understand the relationship between ISM properties and star formation, the Kennicutt-Schmidt relation will be applied to different gas components. Additionally, the star formation threshold proposed by \citet{Schaye2004} based on cold gas formation will be investigated, and the star formation efficiency for \textrm{H\textsc{i}}, H$_2$, and kinematically cold \textrm{H\textsc{i}} phases will be compared with results from previous studies.
+

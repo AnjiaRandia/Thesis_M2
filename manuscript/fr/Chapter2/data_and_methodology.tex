@@ -1,0 +1,207 @@
+\chapter[Méthodologie et données]{Méthodologie et données}
+
+Ce chapitre présente les observations, les méthodes utilisées pour séparer et cartographier les composantes de l'\HI, ainsi que l'échantillon de galaxies.
+
+\section{L'hydrogène atomique neutre}
+
+Les données d'\HI\ proviennent du relevé \textit{The \HI\ Nearby Galaxy Survey} (THINGS ; \citealt{things}), réalisé avec le Karl G. Jansky Very Large Array (VLA) du National Radio Astronomy Observatory (NRAO)\footnote{Le National Radio Astronomy Observatory est un établissement de la National Science Foundation, exploité par Associated Universities, Inc., dans le cadre d'un accord de coopération.}.\\\indent
+Le VLA est situé dans la plaine de San Agustin, au Nouveau-Mexique. Il comprend 27 antennes de 25 mètres de diamètre, disposées en Y, avec une ligne de base maximale de 35 km. Il couvre des fréquences de 50 MHz à 97 GHz et peut atteindre une résolution angulaire de 0.1 seconde d'arc et une sensibilité d'environ 100 microjanskys \citep{vla1980}.\\\indent
+THINGS a cartographié la raie à 21 cm de 34 galaxies proches afin d'étudier les propriétés du MIS en lien avec la morphologie, la formation stellaire et la distribution de masse le long de la séquence de Hubble. Ces galaxies se situent entre 2 et 15 Mpc. Le relevé fournit deux jeux de cubes de données : l'un à pondération robuste, privilégiant la résolution spatiale ($\sim 6''$), l'autre à pondération naturelle, privilégiant la sensibilité à l'émission diffuse ($\sim 11''$). La résolution en vitesse est de $1.3$ km s$^{-1}$ pour deux galaxies, et de $2.6$ ou $5.2$ km s$^{-1}$ pour les autres \citep{Walter2008}. L'échantillon couvre des SFR de $10^{-3}$ à 6 $M_\odot$ yr$^{-1}$, des masses d'\HI\ de 0.01 à $14 \times 10^9\,M_\odot$, des magnitudes absolues en bande B de $-11.5$ à $-21.7$ mag et des métallicités de 7.5 à 9.2, exprimées par $12 + \log[\mathrm{O/H}]$. Les produits THINGS comprennent les cubes spectraux, les cartes d'intensité intégrée (moment 0), de vitesse (moment 1) et de dispersion de vitesse (moment 2), accessibles en ligne\footnote{http://www.mpia.de/THINGS}.\\\indent
+La densité de surface d'\HI, $\Sigma_{\textrm{H\textsc{i}}}$, est calculée à partir des cartes de moment 0 selon \citet{Leroy2008} :
+\begin{equation}
+	\Sigma_{\textrm{H\textsc{i}}} = 0.020 \times I_{21\mathrm{cm}} \times \cos i
+	\label{eq:mom0_HI}
+\end{equation}
+\noindent où $\Sigma_{\textrm{H\textsc{i}}}$ est exprimée en $M_\odot$ pc$^{-2}$, $I_{21\mathrm{cm}}$ en K km s$^{-1}$, et $i$ désigne l'inclinaison de la galaxie. Le facteur $\cos i$ corrige la projection du disque sur le plan du ciel. La colonne de gauche de la figure~\ref{fig:surf_dens_exemples} présente quelques cartes de $\Sigma_{\textrm{H\textsc{i}}}$.
+
+\section{Le taux de formation stellaire}
+
+Les cartes de densité de surface du taux de formation stellaire combinent des observations dans l'infrarouge moyen, à 24 $\mu$m, et dans l'ultraviolet lointain (FUV). Les premières proviennent de \textit{Spitzer Infrared Nearby Galaxies Survey} (SINGS ; \citealt{sings2003}), réalisé avec le télescope spatial \textit{Spitzer}, et les secondes de \textit{Galaxy Evolution Explorer Nearby Galaxies Survey} (GALEX NGS ; \citealt{galex2007}). Leurs résolutions angulaires sont respectivement de 6 et 4.0 secondes d'arc.\\\indent
+L'émission à 24 $\mu$m provient principalement de grains de poussière chauffés par le rayonnement ultraviolet des étoiles jeunes et massives, surtout de types O et B. La poussière absorbe ce rayonnement puis réémet l'énergie dans l'infrarouge \citep{calzetti2007}.\\\indent
+Le FUV trace, quant à lui, la formation stellaire non masquée par la poussière, car il provient directement des photosphères des étoiles jeunes et massives. Il renseigne sur la formation stellaire récente, moyennée sur environ $\sim$100 Myr \citep{salim2007}.\\\indent
+L'association des deux traceurs permet de prendre en compte les contributions visible et obscurcie de la formation stellaire. Nous calculons $\Sigma_{\mathrm{SFR}}$ à l'aide de la calibration de \citet{Leroy2008}, fondée sur celles de \citet{calzetti2007} et de \citet{salim2007} pour le rayonnement à 24 $\mu$m et le FUV :
+\begin{equation}
+	\Sigma_{\mathrm{SFR}} = (8.1 \times 10^{-2}\,I_{\mathrm{FUV}} + 3.2^{+1.2}_{-0.7} \times 10^{-3}\,I_{24\mu\mathrm{m}})\,\cos i
+	\label{eq:sfr_24_uv}
+\end{equation}
+\noindent où $\Sigma_{\mathrm{SFR}}$ est en $M_\odot$ yr$^{-1}$ kpc$^{-2}$, $I_{\mathrm{FUV}}$ et $I_{24\mu\mathrm{m}}$ en MJy sr$^{-1}$, et $i$ est l'inclinaison de la galaxie. Des exemples figurent dans la colonne de droite de la figure~\ref{fig:surf_dens_exemples}.
+\begin{figure}[htbp]
+\centering
+\begin{minipage}{.9\linewidth}
+\centering
+\includegraphics[width=1\linewidth]{images/628_surfaces.pdf}
+\subcaption{NGC 0628}
+\includegraphics[width=1\linewidth]{images/3351_surfaces.pdf}
+\subcaption{NGC 3351}
+\includegraphics[width=1\linewidth]{images/4214_surfaces.pdf}
+\subcaption{NGC 4214}
+\end{minipage}
+\caption{Exemples de cartes de densité de surface d'\HI\ (à gauche), de H$_2$ (au centre) et du SFR (à droite). Les ellipses rouges en tirets indiquent le rayon optique $r_{25}$. La croix repère le centre de chaque galaxie.}
+\label{fig:surf_dens_exemples}
+\end{figure}
+
+\section{L'hydrogène moléculaire}
+
+Nous utilisons les cartes de CO de \textit{Heterodyne Receiver Array CO Line Extragalactic Survey} (HERACLES ; \citealt{leroy2009}) pour tracer le H$_2$, sauf pour NGC 5236. HERACLES a été réalisé avec le télescope de 30 mètres de l'Institut de radioastronomie millimétrique (IRAM)\footnote{https://iram-institute.org/observatories/30-meter-telescope/}, au Pico Veleta, dans la Sierra Nevada espagnole. Ce relevé a cartographié la raie CO J$=$2--1 à 230 GHz dans 48 galaxies proches. Les cartes s'étendent jusqu'au rayon optique $r_{25}$, avec une résolution angulaire de 13 secondes d'arc et une résolution en vitesse de 2.6 km s$^{-1}$. Les cubes de données, les cartes d'intensité intégrée du CO (moment 0) et les cartes de vitesse pondérée par l'intensité (moment 1) sont disponibles en ligne\footnote{https://oms.iram.fr/oms/?dms=viewobject/\_=-O-260678\&pageId=4}.\\\indent
+Pour NGC 5236, les données CO proviennent de l'\textit{Atlas CO de Nobeyama des galaxies spirales proches} \citealt{nobeyama2007}. Ce relevé a utilisé le télescope de 45 mètres de l'observatoire radio de Nobeyama (NRO), au Japon, équipé du récepteur à 25 faisceaux BEARS. Les observations présentent un faisceau de 15 secondes d'arc et une résolution en vitesse typique de 5 km s$^{-1}$. Elles fournissent des cartes de la raie CO J$=$1--0 de 40 galaxies spirales.\\\indent
+La densité de surface de H$_2$, $\Sigma_{\mathrm{H}_2}$, est déduite de l'intensité CO intégrée $I_{\mathrm{CO}}$ avec la relation de \citet{Leroy2008} pour la transition J$=$2--1 :
+\begin{equation}
+	\Sigma_{\mathrm{H}_2} = 5.5 \times I_{\mathrm{CO}} \times \cos i
+	\label{eq:co_h2}
+\end{equation}
+\noindent ou, pour la transition J$=$1--0 :
+\begin{equation}
+	\Sigma_{\mathrm{H}_2} = 4.4 \times I_{\mathrm{CO}} \times \cos i
+	\label{eq:co10_h2}
+\end{equation}
+\noindent où $\Sigma_{\mathrm{H}_2}$ est en $M_\odot$ pc$^{-2}$ et $I_{\mathrm{CO}}$ en K km s$^{-1}$. L'angle $i$ désigne l'inclinaison. Ces relations supposent un facteur de conversion constant $X_{\mathrm{CO}} = 2 \times 10^{20}$ cm$^{-2}$ (K km s$^{-1}$)$^{-1}$, correspondant à la métallicité du voisinage solaire. L'équation~\ref{eq:co_h2} tient aussi compte du rapport des intensités des raies J$=$2--1 et J$=$1--0. Les cartes de $\Sigma_{\mathrm{H}_2}$ sont présentées dans la colonne centrale de la figure~\ref{fig:surf_dens_exemples}.
+
+\section[Extraction des composantes d'\HI\ cinématiquement froide et chaude]{Extraction des composantes d'\HI\\cinématiquement froide et chaude}
+\label{sec:ROHSA}
+\subsection{Les méthodes de décomposition gaussienne}
+
+Comme indiqué dans la section~\ref{subsubsec:gaussian_decomposition}, plusieurs méthodes permettent de décomposer les spectres d'\HI\ en composantes gaussiennes associées à des populations de gaz cinématiquement distinctes. Elles diffèrent surtout dans leur traitement des dégénérescences de l'ajustement et de l'information spatiale.\\\indent
+Les méthodes pixel par pixel, comme BAYGAUD \citep{Oh2019}, ajustent indépendamment chaque profil de vitesse. BAYGAUD utilise une approche bayésienne par chaînes de Markov Monte-Carlo et échantillonnage imbriqué pour estimer les paramètres, puis les facteurs de Bayes pour choisir le nombre de composantes. Cette méthode fournit des estimations robustes des paramètres et de leurs incertitudes, mais l'indépendance des pixels peut empêcher de reconnaître certaines structures cohérentes. GaussPy \citep{Lindner2015} emploie une décomposition gaussienne autonome (AGD), fondée sur la spectroscopie des dérivées, pour déterminer le nombre de composantes et leurs paramètres initiaux. Il a notamment servi à séparer les composantes étroites, associées au CNM, des composantes larges, associées au WNM, dans les spectres d'émission et d'absorption d'\HI\ \citep{Murray2017, Murray2018}. GaussPy+ \citep{Riener2019} améliore le traitement du bruit et l'ajustement ; il peut aussi réajuster les solutions mal contraintes à partir des pixels voisins. Il a également été utilisé pour extraire le gaz atomique froid \citep{Syed2023}. Contrairement à BAYGAUD, il intègre donc une cohérence spatiale limitée, appliquée après le premier ajustement plutôt que comme contrainte intrinsèque.\\\indent
+La méthode des superprofils de \citet{Ianjamasimanana2012} répond au manque de signal sur bruit des approches pixel par pixel en empilant les profils de galaxies entières ou de grandes régions. Elle décrit efficacement les propriétés globales, mais sacrifie l'information spatiale et ne permet pas de cartographier chaque composante.\\\indent
+Nous utilisons ici ROHSA (\textit{Regularized Optimization for Hyper-Spectral Analysis} ; \citealt{Marchal2019}) pour séparer les composantes étroite et large de l'\HI. ROHSA impose une cohérence spatiale à la décomposition et produit ainsi des cartes de composantes cinématiquement distinctes dont les structures se prolongent sur plusieurs pixels voisins.
+
+\subsection{L'algorithme ROHSA}
+\label{subsec:rohsa_algorithm}
+
+ROHSA a été développé pour extraire la structure multiphasée du MIS neutre à partir des cubes d'émission à 21 cm \citep{Marchal2019}. Il décompose les données hyperspectrales en une somme de composantes gaussiennes spatialement cohérentes, en supposant que les propriétés d'une structure de gaz varient progressivement entre lignes de visée voisines.\\\indent
+À la position $(x,y)$ et à la vitesse $v$, la température de brillance $T_B(x,y,v)$ est modélisée par la somme de $N$ gaussiennes :
+\begin{equation}
+	T_B(x, y, v) = \sum_{n=1}^{N} A_n(x, y) \exp\left(-\frac{(v - \mu_n(x, y))^2}{2\sigma_n(x, y)^2}\right)
+	\label{eq:gaussian_model}
+\end{equation}
+\noindent où $A_n(x,y)$ est l'amplitude de la composante $n$, $\mu_n(x,y)$ sa vitesse centrale et $\sigma_n(x,y)$ sa dispersion de vitesse. Contrairement aux méthodes pixel par pixel, ROHSA contraint les variations spatiales de ces paramètres.\\\indent
+L'algorithme minimise une fonction de coût régularisée combinant l'accord aux données et des termes de régularisation spatiale :
+\begin{equation}
+	\mathcal{J}(\theta) = \sum_{x,y,v} \frac{(T_B^{\mathrm{obs}}(x,y,v) - T_B^{\mathrm{model}}(x,y,v))^2}{\sigma_{\mathrm{noise}}(x,y)^2} + \mathcal{R}(\theta)
+	\label{eq:cost_function}
+\end{equation}
+\noindent où $\theta$ regroupe tous les paramètres gaussiens et $\mathcal{R}(\theta)$ impose la régularité spatiale. Ce terme s'écrit :
+\begin{equation}
+	\mathcal{R}(\theta) = \lambda_A \sum_n \|\nabla A_n\|^2 + \lambda_\mu \sum_n \|\nabla \mu_n\|^2 + \lambda_\sigma \sum_n \|\nabla \sigma_n\|^2 + \lambda_\sigma'' \sum_n (\sigma_n - \bar{\sigma}_n)^2
+	\label{eq:regularisation}
+\end{equation}
+\noindent Les trois premiers termes pénalisent respectivement les gradients spatiaux d'amplitude, de vitesse centrale et de dispersion de vitesse. Les hyperparamètres $\lambda_A$, $\lambda_\mu$ et $\lambda_\sigma$ contrôlent leur intensité. Le quatrième terme, pondéré par $\lambda_\sigma''$, rapproche les dispersions de chaque composante d'une valeur caractéristique $\bar{\sigma}_n$, afin de favoriser l'identification de phases cinématiques distinctes.\\\indent
+ROHSA utilise une optimisation multirésolution. Plutôt que d'ajuster directement le cube à sa résolution maximale, il procède du plus grossier au plus fin :
+\begin{enumerate}
+\item Le cube est moyenné spatialement sur une grille grossière.
+\item Les paramètres gaussiens sont estimés à cette échelle.
+\item La solution est interpolée sur une grille plus fine.
+\item Les paramètres sont affinés à cette nouvelle résolution.
+\item Les étapes 3 et 4 sont répétées jusqu'à la résolution initiale.
+\end{enumerate}
+\noindent Cette stratégie facilite la convergence en identifiant d'abord les structures à grande échelle, puis les détails plus fins. À chaque résolution, l'optimisation est effectuée avec L-BFGS-B \citep{Byrd1995}, une méthode de quasi-Newton à mémoire limitée adaptée aux problèmes de grande taille avec bornes sur les paramètres.
+
+\subsection{Intérêt de ROHSA pour la séparation des phases}
+
+ROHSA présente plusieurs avantages pour séparer l'\HI\ cinématiquement froid et chaud :
+\begin{enumerate}
+\item \textbf{Cohérence spatiale :} la régularisation produit des composantes cohérentes sur plusieurs éléments de résolution, conformément à l'extension attendue des structures du gaz. Cette propriété facilite notamment l'identification des structures froides étendues susceptibles d'être liées à la formation des nuages moléculaires.
+\item \textbf{Séparation cinématique :} le terme $\lambda_\sigma''$ favorise des composantes de dispersions caractéristiques distinctes et facilite la séparation entre profils étroits et larges, sans fixer a priori le nombre de phases.
+\item \textbf{Réduction des effets du bruit :} la régularisation atténue les fluctuations des paramètres dues au bruit et améliore la fiabilité de la décomposition lorsque le rapport signal sur bruit est faible.
+\item \textbf{Traitement de grands cubes :} la procédure multirésolution et l'optimisation permettent d'analyser de grands volumes de données dans des temps de calcul raisonnables.
+\end{enumerate}
+\noindent \citet{Marchal2019} ont testé ROHSA sur des observations synthétiques à 21 cm issues de simulations de turbulence thermiquement bistable. L'algorithme retrouve la structure multiphasée du gaz et reproduit les spectres de puissance de la densité de colonne et de la vitesse centrale des différentes phases. Son application à un champ de haute latitude galactique du relevé GHIGLS met en évidence des structures étroites, isolées et filamentaires ($\sigma \sim 1$--2 km s$^{-1}$), ainsi que des composantes plus larges et diffuses ($\sigma \sim 4$--10 km s$^{-1}$).
+
+\subsection{Mise en œuvre et choix des paramètres}
+
+ROHSA est écrit en Fortran 90 et librement accessible\footnote{https://github.com/antoinemarchal/ROHSA}. Son interface Python, ROHSApy, facilite son exécution et l'analyse des résultats. Plusieurs paramètres doivent être définis :
+\begin{itemize}
+\item Le nombre de gaussiennes $N$, suffisamment grand pour décrire la complexité des spectres sans surajuster les données.
+\item Les hyperparamètres $\lambda_A$, $\lambda_\mu$, $\lambda_\sigma$ et $\lambda_\sigma''$, qui contrôlent le lissage spatial et le regroupement des dispersions. Des valeurs élevées produisent des cartes plus lisses mais peuvent effacer des structures réelles ; des valeurs trop faibles rendent les solutions plus sensibles au bruit.
+\item Une carte de bruit bidimensionnelle, nécessaire à la pondération des données dans la fonction de coût.
+\end{itemize}
+\noindent Le choix de ces paramètres est empirique et dépend de la qualité des données, de la résolution spatiale et de la complexité du champ de vitesse. Nous les avons ajustés de manière itérative en examinant les résidus et la plausibilité physique des décompositions.\\\indent
+La figure~\ref{fig:cnm_wnm_maps} illustre les cartes de densité de surface de l'\HI\ total, cinématiquement froid et cinématiquement chaud dans IC 2574. Les ajustements finaux utilisent $\lambda_A=0$, $\lambda_\mu=1$, $\lambda_\sigma=1$ et $\lambda_\sigma''=0$, avec deux ou trois gaussiennes par galaxie. La suppression de la pénalité globale sur les largeurs permet aux dispersions ajustées de varier dans le disque, notamment avec le rayon. La figure utilise l'ajustement final à deux gaussiennes d'IC 2574. Les paramètres retenus sont présentés dans l'annexe~\ref{app:rohsa}.
+\begin{figure}[htbp]
+\centering
+\begin{minipage}{1\linewidth}
+\centering
+\includegraphics[width=1\linewidth]{images/IC2574-cnm_wnm.pdf}
+\end{minipage}
+\caption{Densités de surface de l'\HI\ total (à gauche), cinématiquement froid (au centre) et cinématiquement chaud (à droite) d'IC 2574, issues de la décomposition ROHSA. La carte totale est la somme des deux composantes. Les trois panneaux utilisent le même masque et la même échelle de couleurs. La barre de couleurs indique la densité de surface en $M_\odot$ pc$^{-2}$.}
+\label{fig:cnm_wnm_maps}
+\end{figure}
+
+\subsection{Classification des composantes cinématiquement froide et chaude}
+
+Après la décomposition, les gaussiennes sont classées selon leur dispersion de vitesse. En nous appuyant sur les travaux observationnels et théoriques \citep{Heiles2003a, Ianjamasimanana2012, Park2025}, nous déterminons un seuil local à partir des largeurs ajustées. À chaque position, les largeurs moyennes des gaussiennes les plus étroites et les plus larges sont calculées dans un voisinage de trois faisceaux, en les pondérant par leur flux. Leur moyenne géométrique définit la largeur de séparation. Ce seuil ne peut être inférieur à la dispersion résoluble $1.274\Delta v$, où $\Delta v$ est l'espacement des canaux en vitesse. Les composantes plus étroites que ce seuil local sont affectées à la carte étroite, les autres à la carte large. Les distributions de largeur ne présentent pas deux modes clairement distincts : il s'agit donc d'une séparation cinématique et non d'une détection de deux phases thermiques.\\\indent
+Les largeurs observées comprennent des contributions thermiques et non thermiques. Les termes cinématiquement froid et chaud désignent donc les composantes étroites et larges, sans les identifier directement au CNM et au WNM thermiques. La fraction étroite $f_n$ représente la part du flux intégré d'\HI\ affectée à la composante étroite. Elle dépend aussi du nombre de gaussiennes choisi. BAYGAUD offre un point de comparaison, car il détermine ce nombre séparément pour chaque ligne de visée.
+
+\subsection{Conditions d'application et limites}
+
+L'analyse avec ROHSA suppose une émission optiquement mince : la plus grande partie du rayonnement traverse le gaz sans absorption ni diffusion importantes. Cette hypothèse est généralement valable pour les galaxies vues de face ou modérément inclinées, mais devient moins adaptée aux disques vus par la tranche, où les trajets dans le gaz sont plus longs. Nous limitons donc l'échantillon à $i < 70^\circ$.\\\indent
+Le temps de calcul dépend surtout du nombre de gaussiennes $N$, des dimensions spatiales du cube et du nombre de canaux spectraux.
+
+\section{Détection des sources et masquage avec SoFiA}
+\label{sec:sofia}
+
+SoFiA (\textit{Source Finding Application} ; \citealt{serra2015})\footnote{https://gitlab.com/SoFiA-Admin/SoFiA-2/} a été utilisé pour produire et masquer les cartes de moment 0 à partir des cubes d'\HI\ total, étroit et large fournis par ROHSA (section~\ref{sec:ROHSA}). Ce logiciel libre est conçu pour détecter et caractériser automatiquement les sources d'\HI\ dans les cubes spectraux extragalactiques.\\\indent
+SoFiA exploite la position de l'émission sur le ciel et sa répartition dans les canaux de vitesse. Il propose plusieurs méthodes de détection, dont certaines recherchent l'émission à différentes échelles spatiales et spectrales, afin de détecter des sources compactes comme une émission faible et étendue. Les détections sont enregistrées dans un masque binaire : les voxels détectés, c'est-à-dire les éléments d'un cube tridimensionnel, valent un et les autres zéro. Le masque délimite ainsi l'émission sur le ciel et en vitesse.\\\indent
+Le seuil de détection doit permettre de distinguer l'émission du bruit en tenant compte de la sensibilité et du type d'émission étudié. SoFiA regroupe les voxels voisins en sources individuelles. Des critères de taille minimale permettent d'éliminer des pics de bruit isolés. Une fois les sources identifiées, un paramètre optionnel de fiabilité peut sélectionner celles dont la probabilité estimée d'être réelles est suffisamment élevée.\\\indent
+SoFiA produit des cartes d'intensité intégrée (moment 0), de vitesse pondérée par l'intensité (moment 1) et de dispersion de vitesse (moment 2), ainsi que des spectres intégrés, des diagrammes position--vitesse et des cubes de données pour chaque source détectée.
+
+\section{L'échantillon de galaxies}
+\label{sec:galaxy_sample}
+
+Nous adoptons la classification de \citet{Leroy2008} : les galaxies naines ont une masse stellaire $\log(M_*/M_\odot) \lesssim 10.0$ et une magnitude absolue en bande B $M_B \gtrsim -20$ mag. Les autres galaxies sont classées comme spirales.\\\indent
+L'échantillon final comprend 16 galaxies, dont neuf naines et sept spirales, présentes dans THINGS, GALEX NGS et SINGS afin de disposer des données requises. Parmi les galaxies de faible masse, seules NGC 0925, NGC 2403, NGC 2976 et NGC 4214 disposent de données CO ; les autres sont supposées dominées par l'\HI.\\\indent
+Quatre galaxies ont été exclues de l'échantillon initial. Pour Ho I, M81 dwA et NGC 5055, aucun jeu de paramètres ROHSA testé n'a satisfait les critères d'acceptation. NGC 5236 a été écartée en raison de fortes structures négatives dans son cube d'\HI, qui affectaient la décomposition.\\\indent
+Toutes les galaxies retenues ont une inclinaison $i < 70^\circ$. Ce choix limite trois difficultés : la diminution du nombre de mesures indépendantes après déprojection, les incertitudes liées à l'allongement du faisceau selon le petit axe et les écarts croissants à l'hypothèse d'une émission optiquement mince lorsque l'inclinaison augmente.\\\indent
+Les décompositions finales sont réalisées à la résolution spatiale native de l'\HI\ de chaque galaxie. Les cartes de gaz et de SFR sont ensuite ramenées à une même résolution avant leur comparaison. Les comparaisons entre galaxies nécessitent également un lissage à une résolution physique commune, afin de sonder la même échelle spatiale. Le tableau~\ref{tab:galaxy_sample} rassemble les propriétés de l'échantillon.
+
+
+\begin{table}[htbp]
+	\centering
+	\caption{\textbf{Propriétés de l'échantillon final.} $D$ est la distance, $i$ l'inclinaison, $r_{25}$ le rayon optique, PA l'angle de position, $M_*$ la masse stellaire, $M_B$ la magnitude absolue en bande B et SFR le taux de formation stellaire. La métallicité est exprimée par $12+\log(\mathrm{O/H})$. $\ell_{\HI}$ désigne la résolution linéaire native des données \HI\ et $\ell_{\mathrm{dec}}$ la résolution utilisée pour la décomposition.}
+	\begin{adjustbox}{width=1\textwidth}
+		\begin{tabular}{|ccccccccccccc|}
+			\hline\hline
+			Galaxie & $D$ & $i$ & $r_{25}$ & PA & Hubble &Morph.& $\log M_*$ & $M_B$ & SFR &métal. & $\ell_{\HI}$ & $\ell_{\mathrm{dec}}$ \\[-1pt]
+			& [Mpc] & [$^\circ$] & [kpc] & [$^\circ$] & Type &Type& [$M_\odot$] & [mag]&[$M_{\odot}\ yr^{-1}$] &12+log(O/H) & [pc] & [pc] \\
+			1 	&	2	&	3	&	4	&	5	&	6	&	7	&	8	&	9	&	10	&	11 & 12 & 13 \\
+			\hline
+			\multicolumn{13}{|c|}{\rule[-5pt]{0pt}{20pt}Galaxies naines} \\
+			DDO 53 & 3.6 & 31 & 0.4 & 132 & Irr &9.9& 7.0$^b$ & $-13.4$ &0.008$^c$& 7.77 & 205 & 205 \\
+			DDO 154 & 4.3 & 66 & 1.2 & 230 & Irr &9.9& 7.1 & $-14.4$ &0.005& 7.54 & 294 & 294 \\
+			HO II & 3.4 & 41 & 3.7 & 177 & Irr &9.9& 8.3 & $-16.9$ &0.048& 7.68 & 226 & 226 \\
+			IC 2574 & 4.0 & 53 & 7.5 & 56 & Irr &8.9& 8.7 & $-18.0$ &0.070& 7.94 & 248 & 248 \\
+			NGC 0925 & 9.2 & 66 & 14.2 & 287 & SBcd &7.0& 9.9 & $-20.0$ &0.561& 8.24 & 265 & 265 \\
+			NGC 2403 & 3.2 & 63 & 7.3 & 124 & SBc &6.0& 9.7 & $-19.4$ &0.382& 8.31 & 136 & 136 \\
+			NGC 2976 & 3.6 & 65 & 3.8 & 335 & Sc &5.2& 9.1 & $-17.8$ &0.087& 8.30 & 129 & 129 \\
+			NGC 4214 & 2.9 & 44 & 2.9 & 65 & Irr &9.8& 8.8 & $-17.4$ &0.107& 8.34 & 207 & 207 \\
+			NGC 7793 & 3.9 & 50 & 5.8 & 290 & Scd &7.4& 9.5 & $-18.7$ &0.235& 8.22 & 295 & 295 \\
+			\hline
+			\multicolumn{13}{|c|}{\rule[-5pt]{0pt}{20pt}Galaxies spirales} \\
+			NGC 0628 & 7.3 & 7 & 10.4 & 20 & Sc &5.2& 10.1 & $-20$ &0.807& 8.33 & 420 & 420 \\
+			NGC 2903 & 8.9 & 65 & 11.7 & 204 & Sbc &4.0& 10.6$^a$ & $-17.8$ &1.400& 9.12 & 659 & 659 \\
+			NGC 3184 & 11.1 & 16 & 11.9 & 179 & SBc &5.9& 10.3 & $-19.9$ &0.901& 8.48 & 287 & 287 \\
+			NGC 3351 & 10.1 & 41 & 10.6 & 192 & SBb &3.1& 10.4 & $-19.7$ &0.940& 8.60 & 487 & 487 \\
+			NGC 4736 & 4.7 & 41 & 5.3 & 296 & Sab &2.3& 10.3 & $-20.0$ &0.481& 8.31 & 233 & 233 \\
+			NGC 5194 & 8.0 & 20 & 9.0 & 172 & SBc &4.0& 10.6 & $-21.1$ &3.125& 8.54 & 462 & 462 \\
+			NGC 6946 & 5.9 & 33 & 9.8 & 243 & SBc &5.9& 10.5 & $-20.9$ &3.329& 8.40 & 173 & 173 \\
+			\hline\hline
+			
+			
+			
+		\end{tabular}
+		
+	\end{adjustbox}
+	\label{tab:galaxy_sample}
+	\subcaption*{\\\textbf{Notes.} Sauf indication contraire, les colonnes 2--6 et 8--10 proviennent de \citet{Leroy2008}, et la colonne 11 de \citet{2014PhDT}. La colonne 12 donne la taille physique du grand axe du faisceau natif d'\HI, calculée à partir des en-têtes des cubes et des distances de la colonne 2. La colonne 13 indique la résolution de la décomposition. La colonne 7 provient de \citet{Hyperleda}. $^a$ : \citet{ngc2903mstar} ; $^b$ : \citet{Sylos2025} ; $^c$ : \citet{things}.}
+\end{table}
+
+\clearpage
+\section[Science ouverte et reproductibilité]{Science ouverte et reproductibilité}
+\label{sec:reproducibility}
+
+Afin de rendre ce mémoire entièrement reproductible, nous mettons à disposition tous les scripts d'analyse sur GitHub à l'adresse \url{https://github.com/AnjiaRandia/Thesis_M2}. Nous utilisons Snakemake pour organiser les scripts de traitement en une chaîne de calcul qui peut être lancée par une seule commande. Snakemake est un gestionnaire de flux de travail qui automatise les étapes de l'analyse en respectant les dépendances entre leurs fichiers d'entrée et de sortie \citep{Molder2021}. Des fichiers de configuration distincts décrivent les paramètres retenus, tandis qu'un fichier d'environnement recense les dépendances logicielles.
+
+Le partage des scripts permet à d'autres chercheurs de reproduire notre analyse et de l'adapter à leurs données. Cette démarche s'inscrit dans les principes FAIR, qui visent à rendre les produits de la recherche faciles à trouver, accessibles, interopérables et réutilisables \citep{Wilkinson2016}.
+
+Ces principes guident également la politique de science ouverte de l'Observatoire SKA (SKAO), qui encourage le partage des données, des logiciels et des chaînes d'analyse \citep{SKAOOpenScience}. Son réseau de centres régionaux SKA est conçu pour donner accès aux données, aux ressources de calcul et aux outils d'analyse, afin de faciliter la collaboration et la reproduction des travaux d'autres équipes. Le partage de notre chaîne d'analyse poursuit le même objectif : rendre nos méthodes pleinement accessibles à d'autres chercheurs.
+\newpage

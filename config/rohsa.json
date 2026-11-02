@@ -1,0 +1,242 @@
+{
+  "DDO154": {
+    "n_gauss": 3,
+    "channel_width_kms": 2.583008545,
+    "spatial_binning": 4,
+    "noise_channels": [
+      0,
+      3
+    ],
+    "lambda_amp": 0.0,
+    "lambda_mu": 1.0,
+    "lambda_sig": 1.0,
+    "lambda_var_sig": 0.0,
+    "minimum_fwhm_channels": 3.0,
+    "maximum_sigma_kms": 40.0
+  },
+  "DDO53": {
+    "n_gauss": 3,
+    "channel_width_kms": 2.576894043,
+    "spatial_binning": 3,
+    "noise_channels": [
+      38,
+      41
+    ],
+    "lambda_amp": 0.0,
+    "lambda_mu": 1.0,
+    "lambda_sig": 1.0,
+    "lambda_var_sig": 0.0,
+    "minimum_fwhm_channels": 3.0,
+    "maximum_sigma_kms": 40.0
+  },
+  "HO_II": {
+    "n_gauss": 2,
+    "channel_width_kms": 2.579840576,
+    "spatial_binning": 4,
+    "noise_channels": [
+      0,
+      3
+    ],
+    "lambda_amp": 0.0,
+    "lambda_mu": 1.0,
+    "lambda_sig": 1.0,
+    "lambda_var_sig": 0.0,
+    "minimum_fwhm_channels": 3.0,
+    "maximum_sigma_kms": 40.0
+  },
+  "IC2574": {
+    "n_gauss": 2,
+    "channel_width_kms": 2.5772358399999997,
+    "spatial_binning": 4,
+    "noise_channels": [
+      0,
+      3
+    ],
+    "lambda_amp": 0.0,
+    "lambda_mu": 1.0,
+    "lambda_sig": 1.0,
+    "lambda_var_sig": 0.0,
+    "minimum_fwhm_channels": 3.0,
+    "maximum_sigma_kms": 40.0
+  },
+  "NGC0628": {
+    "n_gauss": 3,
+    "channel_width_kms": 2.587775146,
+    "spatial_binning": 3,
+    "noise_channels": [
+      0,
+      3
+    ],
+    "lambda_amp": 0.0,
+    "lambda_mu": 1.0,
+    "lambda_sig": 1.0,
+    "lambda_var_sig": 0.0,
+    "minimum_fwhm_channels": 3.0,
+    "maximum_sigma_kms": 40.0
+  },
+  "NGC0925": {
+    "n_gauss": 3,
+    "channel_width_kms": 2.5859296880000002,
+    "spatial_binning": 1,
+    "noise_channels": [
+      0,
+      3
+    ],
+    "lambda_amp": 0.0,
+    "lambda_mu": 1.0,
+    "lambda_sig": 1.0,
+    "lambda_var_sig": 0.0,
+    "minimum_fwhm_channels": 3.0,
+    "maximum_sigma_kms": 40.0
+  },
+  "NGC2403": {
+    "n_gauss": 3,
+    "channel_width_kms": 5.161540039,
+    "spatial_binning": 4,
+    "noise_channels": [
+      0,
+      3
+    ],
+    "lambda_amp": 0.0,
+    "lambda_mu": 1.0,
+    "lambda_sig": 1.0,
+    "lambda_var_sig": 0.0,
+    "minimum_fwhm_channels": 3.0,
+    "maximum_sigma_kms": 40.0
+  },
+  "NGC2903": {
+    "n_gauss": 3,
+    "channel_width_kms": 5.176571289000001,
+    "spatial_binning": 5,
+    "noise_channels": [
+      0,
+      3
+    ],
+    "lambda_amp": 0.0,
+    "lambda_mu": 1.0,
+    "lambda_sig": 1.0,
+    "lambda_var_sig": 0.0,
+    "minimum_fwhm_channels": 3.0,
+    "maximum_sigma_kms": 40.0
+  },
+  "NGC2976": {
+    "n_gauss": 2,
+    "channel_width_kms": 5.152666992,
+    "spatial_binning": 2,
+    "noise_channels": [
+      0,
+      3
+    ],
+    "lambda_amp": 0.0,
+    "lambda_mu": 1.0,
+    "lambda_sig": 1.0,
+    "lambda_var_sig": 0.0,
+    "minimum_fwhm_channels": 3.0,
+    "maximum_sigma_kms": 40.0
+  },
+  "NGC3184": {
+    "n_gauss": 2,
+    "channel_width_kms": 2.586483887,
+    "spatial_binning": 1,
+    "noise_channels": [
+      0,
+      3
+    ],
+    "lambda_amp": 0.0,
+    "lambda_mu": 1.0,
+    "lambda_sig": 1.0,
+    "lambda_var_sig": 0.0,
+    "minimum_fwhm_channels": 3.0,
+    "maximum_sigma_kms": 40.0
+  },
+  "NGC3351": {
+    "n_gauss": 3,
+    "channel_width_kms": 5.1840253910000005,
+    "spatial_binning": 3,
+    "noise_channels": [
+      0,
+      3
+    ],
+    "lambda_amp": 0.0,
+    "lambda_mu": 1.0,
+    "lambda_sig": 1.0,
+    "lambda_var_sig": 0.0,
+    "minimum_fwhm_channels": 3.0,
+    "maximum_sigma_kms": 40.0
+  },
+  "NGC4214": {
+    "n_gauss": 2,
+    "channel_width_kms": 1.2906469729999999,
+    "spatial_binning": 4,
+    "noise_channels": [
+      0,
+      3
+    ],
+    "lambda_amp": 0.0,
+    "lambda_mu": 1.0,
+    "lambda_sig": 1.0,
+    "lambda_var_sig": 0.0,
+    "minimum_fwhm_channels": 3.0,
+    "maximum_sigma_kms": 40.0
+  },
+  "NGC4736": {
+    "n_gauss": 3,
+    "channel_width_kms": 5.1679892579999995,
+    "spatial_binning": 3,
+    "noise_channels": [
+      0,
+      3
+    ],
+    "lambda_amp": 0.0,
+    "lambda_mu": 1.0,
+    "lambda_sig": 1.0,
+    "lambda_var_sig": 0.0,
+    "minimum_fwhm_channels": 3.0,
+    "maximum_sigma_kms": 40.0
+  },
+  "NGC5194": {
+    "n_gauss": 2,
+    "channel_width_kms": 5.173266602,
+    "spatial_binning": 3,
+    "noise_channels": [
+      0,
+      3
+    ],
+    "lambda_amp": 0.0,
+    "lambda_mu": 1.0,
+    "lambda_sig": 1.0,
+    "lambda_var_sig": 0.0,
+    "minimum_fwhm_channels": 3.0,
+    "maximum_sigma_kms": 40.0
+  },
+  "NGC6946": {
+    "n_gauss": 2,
+    "channel_width_kms": 2.576429937831126,
+    "spatial_binning": 2,
+    "noise_channels": [
+      0,
+      3
+    ],
+    "lambda_amp": 0.0,
+    "lambda_mu": 1.0,
+    "lambda_sig": 1.0,
+    "lambda_var_sig": 0.0,
+    "minimum_fwhm_channels": 3.0,
+    "maximum_sigma_kms": 40.0
+  },
+  "NGC7793": {
+    "n_gauss": 2,
+    "channel_width_kms": 2.580164307,
+    "spatial_binning": 5,
+    "noise_channels": [
+      0,
+      3
+    ],
+    "lambda_amp": 0.0,
+    "lambda_mu": 1.0,
+    "lambda_sig": 1.0,
+    "lambda_var_sig": 0.0,
+    "minimum_fwhm_channels": 3.0,
+    "maximum_sigma_kms": 40.0
+  }
+}
