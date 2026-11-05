@@ -6,9 +6,8 @@
 \usepackage{tabularx}
 \usepackage{array}
 \usepackage{xcolor}
-
-
-
+\usepackage{pdfpages}
+\usepackage{bm}
 
 \setlength{\footskip}{9mm}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
@@ -30,6 +29,12 @@
 \input{PreliminaryPages/acknowledgements.tex}
 \newpage
 
+\pagestyle{plain}
+\addcontentsline{toc}{chapter}{Abstract}
+\section*{Abstract}
+\normalfont
+%Open abstract.tex to edit
+\input{./PreliminaryPages/Abstract.tex}
 
 \setcounter{secnumdepth}{5}
 
@@ -50,38 +55,11 @@
 \section*{{List of Abbreviations}}
 \input{PreliminaryPages/abbreviations.tex}
 
-
-
-
-\newpage
-\pagestyle{plain}
-\addcontentsline{toc}{chapter}{Abstract}
-\section*{Abstract}
-\normalfont
-
-\input{./PreliminaryPages/Abstract.tex}
-
 \clearpage
-
-
-
-
-
-
-
-
 
 \let\cleardoublepage=\clearpage 
 
-
-
-
-
 \mainmatter
-
-
-
-
 
 \input{./Chapter1/Introduction.tex}
 
@@ -90,51 +68,11 @@
 
 \input{./Chapter3/results_and_discussions.tex}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \input{./Conclusion/Conclusion.tex}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \noindent
-
 \bibliographystyle{aa} 
 \bibliography{./References/References}
-
-
-
-
-
-
-
-
 
 \appendix
 \renewcommand{\printchaptername}{\chapnamefont Appendix}
@@ -143,4 +81,5 @@
 
 \include{./Appendix/rohsa_parameters}
 
+\includepdf[pages=-]{./Appendix/abstract_cover}
 \end{document}

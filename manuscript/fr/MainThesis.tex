@@ -1,17 +1,21 @@
-
+%	\parbox{\linewidth}{\centering\fontsize{18}{22}\selectfont\linespread{1}\selectfont\bfseries La répartition de l'hydrogène atomique (\HI) cinématiquement froid et chaud et son lien avec la formation stellaire dans les galaxies proches}
 \documentclass[final,oneside]{StylesAndSettings/uqthesis} 
 \usepackage[T1]{fontenc}
-\usepackage[french]{babel}
-\frenchsetup{SmallCapsFigTabCaptions=false}
-\addto\captionsfrench{\renewcommand{\tablename}{Tableau}}
+%\usepackage[french]{babel}
+%\frenchsetup{SmallCapsFigTabCaptions=false}
+%\addto\captionsfrench{\renewcommand{\tablename}{Tableau}}
 \usepackage{caption}
 \usepackage{adjustbox}
 \usepackage{subcaption}
 \usepackage{tabularx}
 \usepackage{array}
 \usepackage{xcolor}
+\usepackage{bm}
+\usepackage{pdfpages}
+%\usepackage[none]{hyphenat} 
 
-
+\renewcommand{\contentsname}{Table des matières} %for table of contents to be in french 
+\renewcommand{\bibname}{Bibliographie}
 
 
 \setlength{\footskip}{9mm}
@@ -35,8 +39,15 @@
 \newpage
 
 
-\setcounter{secnumdepth}{5}
+\pagestyle{plain}
+\addcontentsline{toc}{chapter}{R\'esum\'e}
+\section*{R\'esum\'e}
+\normalfont
+%Open abstract.tex to edit
+\input{./PreliminaryPages/Abstract.tex}
 
+\setcounter{secnumdepth}{5}
+\addcontentsline{toc}{chapter}{Table des matières}
 \tableofcontents
 
 
@@ -49,95 +60,27 @@
 
 
 \newpage
-\addcontentsline{toc}{chapter}{Liste des sigles et abréviations}
-\section*{{Liste des sigles et abréviations}}
+\addcontentsline{toc}{chapter}{Liste des abréviations}
+\section*{{Liste des abréviations}}
 \input{PreliminaryPages/abbreviations.tex}
-
-
-
-
-\newpage
-\pagestyle{plain}
-\addcontentsline{toc}{chapter}{Résumé}
-\section*{Résumé}
-\normalfont
-
-\input{./PreliminaryPages/Abstract.tex}
 
 \clearpage
 
-
-
-
-
-
-
-
-
 \let\cleardoublepage=\clearpage 
-
-
-
-
-
 \mainmatter
-
-
-
-
 
 \input{./Chapter1/Introduction.tex}
 
 \input{./Chapter2/data_and_methodology.tex}
-
-
 \input{./Chapter3/results_and_discussions.tex}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \input{./Conclusion/Conclusion.tex}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 \noindent
 
 \bibliographystyle{aa} 
+%\addcontentsline{toc}{chapter}{Bibliographie}
 \bibliography{./References/References}
-
-
-
-
-
-
-
-
 
 \appendix
 \renewcommand{\printchaptername}{\chapnamefont Annexe}
@@ -146,4 +89,5 @@
 
 \include{./Appendix/rohsa_parameters}
 
+\includepdf[pages=-]{./Appendix/abstract_cover}
 \end{document}

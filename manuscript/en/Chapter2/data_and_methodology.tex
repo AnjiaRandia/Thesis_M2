@@ -1,6 +1,6 @@
 \chapter[Methodology and data]{Methodology and data}
 
-This chapter describes the observational data, the methods used to separate and map the \HI\ components, and the galaxy sample.
+This chapter describes the observational data, the methods used to separate and map the \HI\ components, the fitting methods, and the galaxy sample.
 
 \section{Neutral atomic hydrogen}
 
@@ -46,8 +46,8 @@ Combining these two tracers provides a more complete census of star formation: t
 \end{figure}
 \section{Molecular hydrogen}
 
-We use carbon monoxide (CO) maps from the \textit{Heterodyne Receiver Array CO Line Extragalactic Survey} (HERACLES; \citealt{leroy2009}) to trace molecular hydrogen (H$_2$), except for NGC 5236. HERACLES used the 30-metre telescope of the \textit{Institut de Radioastronomie Millimétrique} (IRAM)\footnote{https://iram-institute.org/observatories/30-meter-telescope/}, located on Pico Veleta in the Spanish Sierra Nevada. The survey mapped the CO J$=$2--1 emission line at 230 GHz in 48 nearby galaxies. The HERACLES maps have excellent spatial coverage, extending to the optical radius $r_{25}$ for each target, with an angular resolution of 13 arcseconds and a velocity resolution of 2.6 km s$^{-1}$. The data products include CO datacubes, integrated CO intensity maps (moment 0), and intensity-weighted velocity maps (moment 1), which are publicly available online\footnote{https://oms.iram.fr/oms/?dms=viewobject/\_=-O-260678\&pageId=4}.\\\indent
-For NGC 5236, the CO data were obtained from the \textit{Nobeyama CO Atlas of Nearby Spiral Galaxies} \citealt{nobeyama2007}. The survey was conducted using the 45-m telescope of the \textit{Nobeyama Radio Observatory} (NRO) in Japan, equipped with the 25-Beam Array Receiver System (BEARS), which enables large-scale mapping of molecular gas in external galaxies. The data were acquired with a beam size of 15 arcseconds and a typical velocity resolution of 5 km s$^{-1}$. The resulting data products provide maps of CO J$=$1--0 of 40 spiral galaxies.\\\indent
+We use carbon monoxide (CO) maps from the \textit{Heterodyne Receiver Array CO Line Extragalactic Survey} (HERACLES; \citealt{leroy2009}) to trace molecular hydrogen (H$_2$). HERACLES used the 30-metre telescope of the \textit{Institut de Radioastronomie Millimétrique} (IRAM)\footnote{https://iram-institute.org/observatories/30-meter-telescope/}, located on Pico Veleta in the Spanish Sierra Nevada. The survey mapped the CO J$=$2--1 emission line at 230 GHz in 48 nearby galaxies. The HERACLES maps have excellent spatial coverage, extending to the optical radius $r_{25}$ for each target, with an angular resolution of 13 arcseconds and a velocity resolution of 2.6 km s$^{-1}$. The data products include CO datacubes, integrated CO intensity maps (moment 0), and intensity-weighted velocity maps (moment 1), which are publicly available online\footnote{https://oms.iram.fr/oms/?dms=viewobject/\_=-O-260678\&pageId=4}.\\\indent
+%For NGC 5236, the CO data were obtained from the \textit{Nobeyama CO Atlas of Nearby Spiral Galaxies} \citealt{nobeyama2007}. The survey was conducted using the 45-m telescope of the \textit{Nobeyama Radio Observatory} (NRO) in Japan, equipped with the 25-Beam Array Receiver System (BEARS), which enables large-scale mapping of molecular gas in external galaxies. The data were acquired with a beam size of 15 arcseconds and a typical velocity resolution of 5 km s$^{-1}$. The resulting data products provide maps of CO J$=$1--0 of 40 spiral galaxies.\\\indent
 The H$_2$ surface density $\Sigma_{\mathrm{H}_2}$ was derived from the integrated CO intensity $I_{\mathrm{CO}}$ using the relation from \citet{Leroy2008} for the J$=$2--1 transition:
 
 \begin{equation}
@@ -135,7 +135,7 @@ ROHSA is implemented in Fortran 90 and is publicly available\footnote{https://gi
 \begin{itemize}
 	\item The number of Gaussian components $N$: This should be chosen high enough to adequately encode the spectral complexity but not so high as to overfit the data.
 	\item The hyperparameters ($\lambda_A$, $\lambda_\mu$, $\lambda_\sigma$, $\lambda_\sigma''$): These control the degree of spatial smoothing and phase clustering. Higher values produce smoother maps but may suppress real small-scale structure; values that are too low may result in noise-dominated solutions.
-	\item A 2D noise map: required for proper weighting in the cost function.
+	\item A 2D noise map: needed for better weighting in the cost function, but is not mandatory
 \end{itemize}
 
 \noindent These parameters must be determined empirically for each galaxy, as optimal values depend on the data quality, spatial resolution, and complexity of the velocity field. For this study, parameters were tuned through an iterative process, examining the residuals and the physical plausibility of the resulting decomposition.\\\indent
@@ -172,10 +172,10 @@ SoFiA produces integrated intensity maps (moment 0), intensity-weighted velocity
 
 
 
+\section{narrow \HI\ and CO comparison}
+To test whether the narrow \HI\ component is preferentially associated with CO emission (discussed in section \ref{sec:phase_spatial_distribution}), we compare its fractional contribution in equal areas of clearly CO-bright and CO-faint emission at similar galactocentric radii in eight galaxies where CO emission is sufficiently bright for this comparison. We start from the native \HI\ and CO maps and convolve them to the same beam size. The resulting spatial resolutions range from 234 to 721 pc. 
 
-
-
-
+\input{Chapter3/ks_fitting.tex}
 
 \section{Galaxy sample}
 \label{sec:galaxy_sample}
@@ -185,53 +185,6 @@ The final sample consists of 16 galaxies: nine dwarfs and seven spirals. These w
 Four galaxies from the initial sample were excluded. For Ho I, M81 dwA, and NGC 5055, none of the tested ROHSA parameter settings met the adopted acceptance criteria. NGC 5236 was excluded because strong negative features in its \HI\ cube affected the existing decomposition results.\\\indent
 All selected galaxies have inclinations $i < 70^\circ$. This criterion was imposed for several reasons: (1) highly inclined galaxies yield fewer independent data points after deprojection, complicating interpretation; (2) beam elongation along the minor axis introduces systematic uncertainties; and (3) the optically thin assumption required by ROHSA becomes increasingly violated at high inclinations.\\\indent
 The final \HI\ decompositions use each galaxy's native spatial resolution. For each galaxy, the gas and SFR maps were matched to a common spatial resolution before comparison. Comparisons between galaxies also require smoothing the maps to a common physical resolution so that the same spatial scale is studied in each galaxy. Table \ref{tab:galaxy_sample} lists the sample galaxies and their properties.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 \begin{table}[htbp]
