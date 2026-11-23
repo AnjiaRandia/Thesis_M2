@@ -9,6 +9,7 @@
 \usepackage{pdfpages}
 \usepackage{bm}
 
+\renewcommand{\contentsname}{Table of Contents}
 \setlength{\footskip}{9mm}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \input{StylesAndSettings/LaTexPackages.tex}
@@ -38,21 +39,20 @@
 
 \setcounter{secnumdepth}{5}
 
-\addcontentsline{toc}{chapter}{Table of Contents}
 \tableofcontents
 
 
-\addcontentsline{toc}{chapter}{Figure List}
-\listof{figure}{Figure List}
+\addcontentsline{toc}{chapter}{List of Figure}
+\listof{figure}{List of Figure}
 
 
-\addcontentsline{toc}{chapter}{Table List}
-\listof{table}{Table List}
+\addcontentsline{toc}{chapter}{List of Table}
+\listof{table}{List of Table}
 
 
 \newpage
-\addcontentsline{toc}{chapter}{List of Abbreviations}
-\section*{{List of Abbreviations}}
+\addcontentsline{toc}{chapter}{List of Abbreviation}
+\section*{{List of Abbreviation}}
 \input{PreliminaryPages/abbreviations.tex}
 
 \clearpage

@@ -6,7 +6,7 @@ This chapter describes the observational data, the methods used to separate and 
 
 All \textrm{H\textsc{i}} data used in this study were obtained from \textit{The \textrm{H\textsc{i}} Nearby Galaxy Survey} (THINGS; \citealt{things}), which used the Karl G. Jansky Very Large Array (VLA) telescope of the National Radio Astronomy Observatory (NRAO)\footnote{The National Radio Astronomy Observatory is a facility of the National Science Foundation operated under cooperative agreement by Associated Universities, Inc.}.\\\indent
 The VLA is located on the Plains of San Agustin in New Mexico and consists of 27 antennas, each with a diameter of 25 metres, arranged in a Y-shaped configuration with a maximum baseline of 35 km. The array covers frequencies ranging from 50 MHz to 97 GHz, achieving angular resolutions as fine as 0.1 arcseconds and sensitivities of approximately 100 microjanskys \citep{vla1980}.\\\indent
-THINGS surveyed the 21 cm emission line in 34 galaxies in the local neighbourhood of the Milky Way, with the goal of investigating the fundamental nature and characteristics of the ISM in relation to galaxy morphology, star formation, and mass distribution across the Hubble sequence. All 34 galaxies are situated at distances between 2 and 15 Mpc. THINGS mapped \HI\ emission in 34 nearby galaxies, with the goal of investigating the properties of the ISM in relation to galaxy morphology, star formation, and mass distribution. All 34 galaxies are located at distances between 2 and 15 Mpc. The survey provides two sets of data cubes with different weighting schemes: robust weighting, optimized for spatial resolution ($\sim 6''$), and natural weighting, optimized for sensitivity to diffuse emission ($\sim 11''$). The velocity resolution is $1.3$ km s$^{-1}$ for two galaxies and either $2.6$ or $5.2$ km s$^{-1}$ for the rest \citep{Walter2008}. The sample spans a wide range of properties: SFR from $10^{-3}$ to 6 $M_\odot$ yr$^{-1}$, total \textrm{H\textsc{i}} mass from 0.01 to $14 \times 10^9\,M_\odot$, absolute B-band magnitude from $-11.5$ to $-21.7$ mag, and metallicities from 7.5 to 9.2 in units of $12 + \log[\mathrm{O/H}]$. The THINGS data products include spectral cubes, integrated \textrm{H\textsc{i}} intensity maps (moment 0), velocity maps (moment 1), and velocity dispersion maps (moment 2), all publicly available online\footnote{http://www.mpia.de/THINGS}.\\\indent
+THINGS surveyed the 21 cm emission line in 34 galaxies in the local neighbourhood of the Milky Way, with the goal of investigating the fundamental nature and characteristics of the ISM in relation to galaxy morphology, star formation, and mass distribution across the Hubble sequence. THINGS mapped \HI\ emission in 34 nearby galaxies situated at distances between 2 and 15 Mpc, with the goal of investigating the properties of the ISM in relation to galaxy morphology, star formation, and mass distribution. The survey provides two sets of data cubes with different weighting schemes: robust weighting, optimized for spatial resolution ($\sim 6''$), and natural weighting, optimized for sensitivity to diffuse emission ($\sim 11''$). The velocity resolution is $1.3$ km s$^{-1}$ for two galaxies and either $2.6$ or $5.2$ km s$^{-1}$ for the rest \citep{Walter2008}. The sample spans a wide range of properties: SFR from $10^{-3}$ to 6 $M_\odot$ yr$^{-1}$, total \textrm{H\textsc{i}} mass from 0.01 to $14 \times 10^9\,M_\odot$, absolute B-band magnitude from $-11.5$ to $-21.7$ mag, and metallicities from 7.5 to 9.2 in units of $12 + \log[\mathrm{O/H}]$. The THINGS data products include spectral cubes, integrated \textrm{H\textsc{i}} intensity maps (moment 0), velocity maps (moment 1), and velocity dispersion maps (moment 2), all publicly available online\footnote{http://www.mpia.de/THINGS}.\\\indent
 The \textrm{H\textsc{i}} surface density $\Sigma_{\textrm{H\textsc{i}}}$ was derived from the moment 0 maps using the relation from \citet{Leroy2008}:
 
 \begin{equation}
@@ -32,16 +32,11 @@ Combining these two tracers provides a more complete census of star formation: t
 \noindent where $\Sigma_{\mathrm{SFR}}$ is in $M_\odot$ yr$^{-1}$ kpc$^{-2}$, $I_{\mathrm{FUV}}$ and $I_{24\mu\mathrm{m}}$ are the FUV and 24 $\mu$m intensities in MJy sr$^{-1}$, and $i$ is the galaxy inclination angle. A sample of $\Sigma_{\mathrm{SFR}}$ maps is shown in the right column of Figure \ref{fig:surf_dens_exemples}.
 \begin{figure}[htbp]
 	\centering
-	\begin{minipage}{.9\linewidth}
+	\begin{minipage}{1\linewidth}
 		\centering
-		\includegraphics[width=1\linewidth]{images/628_surfaces.pdf}
-		\subcaption{NGC 0628}
-		\includegraphics[width=1\linewidth]{images/3351_surfaces.pdf}
-		\subcaption{NGC 3351}
-		\includegraphics[width=1\linewidth]{images/4214_surfaces.pdf}
-		\subcaption{NGC 4214}
+		\includegraphics[width=1\linewidth]{images/NGC6946_maps.pdf}
 	\end{minipage}
-	\caption{Example maps of the surface densities of HI (left column), H$_2$ (middle column) and SFR (right column) from the galaxies in this study. The red dashed annuli display the optical radius $r_{25}$. The cross indicates the centre of each galaxy.}
+	\caption{Example maps of the surface densities of H$_2$ (left), \HI\ (middle) and SFR (right) For NGC6946, a galaxy from our sample. The map resolutions were matched, and they were reprojected onto the same grid. The white circle on bottom left of the \HI\ and H$_2$ maps represents the beam}
 	\label{fig:surf_dens_exemples}
 \end{figure}
 \section{Molecular hydrogen}
@@ -134,8 +129,14 @@ ROHSA is implemented in Fortran 90 and is publicly available\footnote{https://gi
 
 \begin{itemize}
 	\item The number of Gaussian components $N$: This should be chosen high enough to adequately encode the spectral complexity but not so high as to overfit the data.
-	\item The hyperparameters ($\lambda_A$, $\lambda_\mu$, $\lambda_\sigma$, $\lambda_\sigma''$): These control the degree of spatial smoothing and phase clustering. Higher values produce smoother maps but may suppress real small-scale structure; values that are too low may result in noise-dominated solutions.
+	\item The hyperparameters ($\lambda_A$, $\lambda_\mu$, $\lambda_\sigma$, $\lambda_\sigma''$, $\lambda_A''$, $\lambda_\mu''$): These control the degree of spatial smoothing and phase clustering. Higher values produce smoother maps but may suppress real small-scale structure; values that are too low may result in noise-dominated solutions.
 	\item A 2D noise map: needed for better weighting in the cost function, but is not mandatory
+	\item Minimum and maximum fitted dispersion ($lb_\sigma$, $ub_\sigma$): to exlude the too narrow and too broad dispersions that are mainly noises
+	\item Scale factor applied to the maximum amplitude of the additional Gaussian when it is added during initialisation: amp\_fact\_init 
+	\item Initial dispersion of the fitted Gaussian, and the bounds on the dispersion during the initialisation stage: sig\_init, ub\_sig\_init, lb\_sig\_init
+	\item init\_option: Which spectrum the initial fit uses, "mean" or "std"
+	\item The maximum iterations for the initial stage and the main fit
+	\item $m$, the standard L-BFGS-B argument for the number of stored correction pairs (the memory size). A larger m gives a better approximation and fewer iterations, but uses more memory and compute per iteration
 \end{itemize}
 
 \noindent These parameters must be determined empirically for each galaxy, as optimal values depend on the data quality, spatial resolution, and complexity of the velocity field. For this study, parameters were tuned through an iterative process, examining the residuals and the physical plausibility of the resulting decomposition.\\\indent
@@ -169,12 +170,6 @@ The Source Finding Application (SoFiA; \citealt{serra2015})\footnote{https://git
 SoFiA uses the position of the emission on the sky and its distribution across velocity channels to identify sources. It provides several detection methods, including methods that search for emission over different spatial and velocity scales. This helps detect both compact sources and faint, extended emission. The detections are recorded in a binary mask, which assigns a value of one to detected voxels, the pixels of a three-dimensional cube, and zero elsewhere. The mask therefore defines where the detected emission lies on the sky and across velocity channels.\\\indent
 An appropriate detection threshold needs to be chosen to distinguish emission from noise, taking into account the sensitivity of the observations and the emission being studied. SoFiA groups neighbouring detected voxels into individual sources. Minimum size requirements can help remove isolated noise peaks. After sources have been identified, an optional reliability parameter can be set to retain only those with a sufficiently high estimated probability of being real.\\\indent
 SoFiA produces integrated intensity maps (moment 0), intensity-weighted velocity maps (moment 1), velocity dispersion maps (moment 2), integrated spectra, position--velocity diagrams, and data cubes for each detected source.
-
-
-
-\section{narrow \HI\ and CO comparison}
-To test whether the narrow \HI\ component is preferentially associated with CO emission (discussed in section \ref{sec:phase_spatial_distribution}), we compare its fractional contribution in equal areas of clearly CO-bright and CO-faint emission at similar galactocentric radii in eight galaxies where CO emission is sufficiently bright for this comparison. We start from the native \HI\ and CO maps and convolve them to the same beam size. The resulting spatial resolutions range from 234 to 721 pc. 
-
 \input{Chapter3/ks_fitting.tex}
 
 \section{Galaxy sample}
@@ -224,7 +219,7 @@ The final \HI\ decompositions use each galaxy's native spatial resolution. For e
 		
 	\end{adjustbox}
 	\label{tab:galaxy_sample}
-	\subcaption*{\\\textbf{Notes.} Unless noted, columns 2 -- 6 and 8 -- 10 are from \citet{Leroy2008}. Column 11 is from \citet{2014PhDT}. Column 12 gives the physical size of the native \HI\ beam major axis, calculated from the original cube headers using the distances in column 2. Column 13 gives the physical resolution used for the \HI\ decomposition. Column 7 is from \citet{Hyperleda}. $^a$ -- from \citet{ngc2903mstar}, $^b$ -- from \citet{Sylos2025}, $^c$ -- from \citet{things}
+	\subcaption*{\\\textbf{Notes.} Unless noted, columns 2 -- 6 and 8 -- 10 are from \citet{Leroy2008}. Column 11 is from \citet{2014PhDT}. Column 12 gives the physical size of the native \HI\ beam major axis, calculated from the original cube headers using the distances in column 2. Column 13 gives the physical resolution used for the \HI\ decomposition. Column 7 is from \citet{Hyperleda}. $^a$ -- from \citet{ngc2903mstar}, $^b$ -- from \citet{Sylos2025}, $^c$ -- from \citet{Walter2008}
 	}
 \end{table}
 

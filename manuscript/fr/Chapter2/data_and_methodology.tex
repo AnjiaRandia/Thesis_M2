@@ -26,17 +26,12 @@ L'association des deux traceurs permet de prendre en compte les contributions vi
 \end{equation}
 \noindent où $\Sigma_{\mathrm{SFR}}$ est en $M_\odot$ yr$^{-1}$ kpc$^{-2}$, $I_{\mathrm{FUV}}$ et $I_{24\mu\mathrm{m}}$ en MJy sr$^{-1}$, et $i$ est l'inclinaison de la galaxie. Des exemples figurent dans la colonne de droite de la figure~\ref{fig:surf_dens_exemples}.
 \begin{figure}[htbp]
-\centering
-\begin{minipage}{.9\linewidth}
-\centering
-\includegraphics[width=1\linewidth]{images/628_surfaces.pdf}
-\subcaption{NGC 0628}
-\includegraphics[width=1\linewidth]{images/3351_surfaces.pdf}
-\subcaption{NGC 3351}
-\includegraphics[width=1\linewidth]{images/4214_surfaces.pdf}
-\subcaption{NGC 4214}
+	\centering
+\begin{minipage}{1\linewidth}
+	\centering
+	\includegraphics[width=1\linewidth]{images/NGC6946_maps.pdf}
 \end{minipage}
-\caption{Exemples de cartes de densité de surface d'\HI\ (à gauche), de H$_2$ (au centre) et du SFR (à droite). Les ellipses rouges en tirets indiquent le rayon optique $r_{25}$. La croix repère le centre de chaque galaxie.}
+\caption{Exemples de cartes de densité de surface d'\HI\ (à gauche), de H$_2$ (au centre) et du SFR (à droite) pour NGC6946, une galaxie de notre \'echantillon. Les résolutions des cartes ont été harmonisées, et celles-ci ont été reprojetées sur la même grille. Le cercle blanc en bas à gauche des cartes \HI\ et H$_2$ représente le lobe.}
 \label{fig:surf_dens_exemples}
 \end{figure}
 
@@ -114,6 +109,12 @@ ROHSA est écrit en Fortran 90 et librement accessible\footnote{https://github.c
 \item Le nombre de gaussiennes $N$, suffisamment grand pour décrire la complexité des spectres sans surajuster les données.
 \item Les hyperparamètres $\lambda_A$, $\lambda_\mu$, $\lambda_\sigma$ et $\lambda_\sigma''$, qui contrôlent le lissage spatial et le regroupement des dispersions. Des valeurs élevées produisent des cartes plus lisses mais peuvent effacer des structures réelles ; des valeurs trop faibles rendent les solutions plus sensibles au bruit.
 \item Une carte de bruit bidimensionnelle, facultatif, mais nécessaire pour une meilleure pondération des données dans la fonction de coût.
+\item Dispersions minimale et maximale ajustées ($lb_\sigma$, $ub_\sigma$) : pour exclure les dispersions trop étroites et trop larges, qui correspondent principalement à du bruit
+\item Facteur d'échelle appliqué à l'amplitude maximale de la gaussienne supplémentaire lors de son ajout pendant l'initialisation : amp\_fact\_init
+\item Dispersion initiale de la gaussienne ajustée, et bornes sur la dispersion pendant l'étape d'initialisation : sig\_init, ub\_sig\_init, lb\_sig\_init
+\item init\_option : spectre utilisé pour l'ajustement initial, « mean » (moyen) ou « std » (écart-type)
+\item Le nombre maximal d'itérations pour l'étape d'initialisation et pour l'ajustement principal
+\item $m$, l'argument standard de L-BFGS-B correspondant au nombre de paires de corrections stockées (la taille de la mémoire). Une valeur plus grande de $m$ donne une meilleure approximation et nécessite moins d'itérations, mais utilise davantage de mémoire et de calcul par itération
 \end{itemize}
 \noindent Le choix de ces paramètres est empirique et dépend de la qualité des données, de la résolution spatiale et de la complexité du champ de vitesse. Nous les avons ajustés de manière itérative en examinant les résidus et la plausibilité physique des décompositions.\\\indent
 La figure~\ref{fig:cnm_wnm_maps} illustre les cartes de densité de surface de l'\HI\ total, cinématiquement froid et cinématiquement chaud dans IC 2574. Les ajustements finaux utilisent $\lambda_A=0$, $\lambda_\mu=1$, $\lambda_\sigma=1$ et $\lambda_\sigma''=0$, avec deux ou trois gaussiennes par galaxie. La suppression de la pénalité globale sur les largeurs permet aux dispersions ajustées de varier dans le disque, notamment avec le rayon. La figure utilise l'ajustement final à deux gaussiennes d'IC 2574. Les paramètres retenus sont présentés dans l'annexe~\ref{app:rohsa}.
@@ -144,9 +145,6 @@ SoFiA (\textit{Source Finding Application} ; \citealt{serra2015})\footnote{https
 SoFiA exploite la position de l'émission sur le ciel et sa répartition dans les canaux de vitesse. Il propose plusieurs méthodes de détection, dont certaines recherchent l'émission à différentes échelles spatiales et spectrales, afin de détecter des sources compactes comme une émission faible et étendue. Les détections sont enregistrées dans un masque binaire : les voxels détectés, c'est-à-dire les éléments d'un cube tridimensionnel, valent un et les autres zéro. Le masque délimite ainsi l'émission sur le ciel et en vitesse.\\\indent
 Le seuil de détection doit permettre de distinguer l'émission du bruit en tenant compte de la sensibilité et du type d'émission étudié. SoFiA regroupe les voxels voisins en sources individuelles. Des critères de taille minimale permettent d'éliminer des pics de bruit isolés. Une fois les sources identifiées, un paramètre optionnel de fiabilité peut sélectionner celles dont la probabilité estimée d'être réelles est suffisamment élevée.\\\indent
 SoFiA produit des cartes d'intensité intégrée (moment 0), de vitesse pondérée par l'intensité (moment 1) et de dispersion de vitesse (moment 2), ainsi que des spectres intégrés, des diagrammes position--vitesse et des cubes de données pour chaque source détectée.
-
-\section{Comparaison entre le \HI\ étroit et le CO}
-Pour tester si la composante étroite du \HI\ est préférentiellement associée à l'émission du CO (discut\'e dans la section \ref{sec:phase_spatial_distribution}), nous comparons sa contribution fractionnaire dans des surfaces égales d'émission CO clairement brillante et clairement faible, à des rayons galactocentriques similaires, dans huit galaxies où l'émission du CO est suffisamment brillante pour cette comparaison. Nous partons des cartes \HI\ et CO natives et les convoluons à la même taille de faisceau. Les résolutions spatiales obtenues varient de 234 à 721 pc.
 
 \input{Chapter3/ks_fitting.tex}
 
